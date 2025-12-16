@@ -135,7 +135,7 @@ const slidesData = [
             en: "Our team of specialized consultants strengthens project departments, ensures successful executions and guarantees return on investment as a strategic partner."
         },
         //imageUrl: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80"
-        imageUrl: "/img/sector3/08.webp"
+        imageUrl: "img/sector3/08.webp"
     }
 ];
 
