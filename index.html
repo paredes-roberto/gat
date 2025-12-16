@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desarrolladora GAT</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+<header>
+  <div class="nav-container">
+    <div class="logo-container">
+      <img src="img/GAT-Logo-sinDesarrolladdora-white.png" alt="Logo GAT" class="logo">
+      <p class="logo-subtitle" data-es="Gestión y Asesoría Técnica" data-en="Technical Management and Consulting">Gestión y Asesoría Técnica</p>
+    </div>
+
+    <!-- Botón hamburguesa -->
+    <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <nav id="navbar">
+      <ul>
+        <li><a href="#heroSection" data-es="Inicio" data-en="Home">Inicio</a></li>
+        <li><a href="#section-1" data-es="Quiénes Somos" data-en="About Us">Quiénes Somos</a></li>
+        <li><a href="#pilares-main" data-es="Servicios" data-en="Services">Servicios</a></li>
+        <!--<li><a href="#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a></li>-->
+        <li><a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a></li>
+        <li><button id="lang-toggle">EN</button></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+ 
+<!-- Hero -->
+<!--<section id="home" class="hero">
+  <div class="hero-content">
+  <h1 data-es="Construimos tu futuro" data-en="We build your future">Construimos tu futuro</h1>
+  <p data-es="Innovación y confianza en cada proyecto." data-en="Innovation and trust in every project.">Innovación y confianza en cada proyecto.</p>
+  <button class="btn" data-es="Contáctanos" data-en="Contact Us">Contáctanos</button>
+  </div>
+</section>
+
+<section id="proyectos" class="carousel-section">
+  <h2 data-es="Proyectos" data-en="Projects">Proyectos</h2>
+  <div class="carousel full-frame">
+    
+    <div class="slide active">
+      <a href="src/pages/projects/project1/project1.html">
+        <img src="/img/project1.jpg" alt="Proyecto 1">
+        <div class="project-overlay">
+          <h3 data-es="Edificio Corporativo" data-en="Corporate Building">Edificio Corporativo</h3>
+          <p data-es="Diseño y construcción de un moderno edificio de oficinas."
+             data-en="Design and construction of a modern office building.">
+             Diseño y construcción de un moderno edificio de oficinas.
+          </p>
+        </div>
+      </a>
+    </div>
+
+    <div class="slide">
+      <a href="src/pages/projects/project1/project1.html">
+        <img src="img/project2.jpg" alt="Proyecto 2">
+        <div class="project-overlay">
+          <h3 data-es="Residencial Moderno" data-en="Modern Residential">Residencial Moderno</h3>
+          <p data-es="Urbanización de casas familiares con diseño sostenible."
+             data-en="Family housing development with sustainable design.">
+             Urbanización de casas familiares con diseño sostenible.
+          </p>
+        </div>
+      </a>
+    </div>
+
+    <div class="slide">
+      <a href="src/pages/projects/project1/project1.html">
+        <img src="img/project3.jpg" alt="Proyecto 3">
+        <div class="project-overlay">
+          <h3 data-es="Centro Comercial" data-en="Shopping Center">Centro Comercial</h3>
+          <p data-es="Construcción de un centro comercial con espacios amplios."
+             data-en="Construction of a shopping mall with spacious areas.">
+             Construcción de un centro comercial con espacios amplios.
+          </p>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</section>
+-->
+<!--SECTION-A-->
+<!-- Hero Section -->
+    <!-- Hero principal - Sección completa del hero con fondo rotativo -->
+    <section class="hero" id="hero-main-section">
+        <!-- Contenedor de imágenes de fondo rotativas -->
+        <div class="hero-bg" id="hero-background-container">
+            <!-- Slide 1: Imagen de fondo para desarrollo inmobiliario -->
+            <div class="bg-slide active" id="slide-background-1"></div>
+            <!-- Slide 2: Imagen de fondo para infraestructura civil -->
+            <div class="bg-slide" id="slide-background-2"></div>
+            <!-- Slide 3: Imagen de fondo para consultoría -->
+            <div class="bg-slide" id="slide-background-3"></div>
+        </div>
+        
+        <!-- Contenedor principal del contenido del hero -->
+        <div class="hero-content" id="hero-content-container">
+            <div class="text-content" id="hero-text-content">
+                <!-- Título principal del slide actual -->
+                <h2 class="slide-title show" id="hero-main-title" data-es="Desarrollo Inmobiliario" data-en="Real Estate Development">Desarrollo Inmobiliario</h2>
+                <!-- Descripción principal del slide actual -->
+                <p class="slide-description show" id="hero-main-description" data-es="Novahomes: construcción llave en mano y diseño premium con metodología DCI para transparencia total y experiencia personalizada." data-en="Novahomes: turnkey construction and premium design with DCI methodology for total transparency and personalized experience.">
+                    Novahomes: construcción llave en mano y diseño premium con metodología DCI para transparencia total y experiencia personalizada.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Panel de controles de navegación del hero -->
+        <div class="hero-controls" id="hero-navigation-controls">
+            <!-- Indicadores de posición de slides -->
+            <div class="indicators" id="slide-indicators">
+                <div class="indicator active" data-index="0" id="indicator-1"></div>
+                <div class="indicator" data-index="1" id="indicator-2"></div>
+                <div class="indicator" data-index="2" id="indicator-3"></div>
+            </div>
+            <!-- Contador visual de slides -->
+            <div class="slide-counter" id="slide-counter-display">
+                <span id="current-slide-number">01</span> / <span id="total-slides-number">03</span>
+            </div>
+        </div>
+        
+        <!-- Flecha indicadora para scroll hacia abajo -->
+        <div class="scroll-down" id="scroll-down-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>    
+
+    <!-- Sección de ejemplo siguiente (deberás reemplazar esto con tu contenido real) -->
+    <!--<section class="next-section" id="nextSection">
+        <div class="container">
+            <h1>Bienvenido a tu proyecto</h1>
+            <p>Esta es la siguiente sección que aparece después del hero.</p>
+            <p>Tu navbar existente aparecerá aquí normalmente.</p>
+            <div class="content">
+                <p>Contenido de ejemplo para demostrar el scroll.</p>
+                <p>Esta sección tiene suficiente altura para hacer scroll.</p>
+                <p>Puedes colocar aquí todo el contenido de tu proyecto.</p>
+            </div>
+        </div>
+    </section> -->
+   <!-- SECTION-b--> 
+   <!-- Services-->
+  <!--
+   <section id="servicios">
+  <h2>Servicios</h2>
+  <div class="services-grid">
+    <div class="service-box residencial"><span>Residencial</span></div>
+    <div class="service-box industrial"><span>Industrial</span></div>
+    <div class="service-box gobierno"><span>Gobierno</span></div>
+    <div class="service-box municipal"><span>Instalaciones Municipales</span></div>
+  </div>
+</section>
+-->
+<!--SECTION-C-->
+<!-- About Us -->
+ <!--
+    <section id="about" class="about">
+    <div class="about-container">
+        <div class="about-text">
+        <h2>¿Quiénes Somos?</h2>
+        <p>
+            Somos una empresa especializada en diseño, administración y construcción de obras,
+            con un equipo de profesionales de alta calidad y experiencia en ingeniería y arquitectura.
+            Ofrecemos una alternativa innovadora, técnica y competitiva, brindando servicios de calidad y valor agregado.
+            Nuestro principal objetivo es ofrecer el servicio que los clientes merecen.
+        </p>
+        </div>
+        <div class="about-image">
+        <img src="img/Logo6.png" alt="GAT Empresa" />
+        </div>
+    </div>
+    </section>
+  -->
+<!--SECTION-D-->    
+<!-- MISION-->
+<!-- Sección 1: Misión y Visión -->
+  <section class="info-section" id="section-1">
+    <div class="section-content">
+      <h2 class="section-title" data-es="Misión y Visión" data-en="Mission and Vision">Misión y Visión</h2>
+      
+      <div class="dual-container">
+        <!-- Misión -->
+        <div class="dual-column">
+          <div class="dual-icon">
+            <div class="dual-icon-circle outer"></div>
+            <div class="dual-icon-circle inner"></div>
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+          </div>
+          <h3 class="dual-title" data-es="Misión" data-en="Mission">Misión</h3>
+          <p class="content-text" data-es="Transformar ideas en soluciones concretas, ofreciendo servicios integrales mediante metodologías colaborativas e innovación técnica; actuando siempre con integridad, compromiso y calidad." data-en="Transform ideas into concrete solutions, offering comprehensive services through collaborative methodologies and technical innovation; always acting with integrity, commitment and quality.">
+            Transformar ideas en soluciones concretas, ofreciendo servicios integrales mediante metodologías 
+            colaborativas e innovación técnica; actuando siempre con integridad, compromiso y calidad.
+          </p>
+        </div>
+        
+        <!-- Visión -->
+        <div class="dual-column">
+          <div class="dual-icon">
+            <div class="dual-icon-circle outer"></div>
+            <div class="dual-icon-circle inner"></div>
+            <svg viewBox="0 0 24 24">
+              <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+            </svg>
+          </div>
+          <h3 class="dual-title" data-es="Visión" data-en="Vision">Visión</h3>
+          <p class="content-text" data-es="Ser el referente regional en desarrollo y gestión técnica de proyectos para inversiones rentables, sostenibles y de alto impacto positivo." data-en="To be the regional reference in development and technical project management for profitable, sustainable and high positive impact investments.">
+            Ser el referente regional en desarrollo y gestión técnica de proyectos para inversiones 
+            rentables, sostenibles y de alto impacto positivo.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator" data-target="section-2"></div>
+  </section>
+
+  <!-- Sección 2: Historia -->
+  <section class="info-section" id="section-2">
+    <div class="section-content">
+      <h2 class="section-title" data-es="Nuestra Historia" data-en="Our History">Nuestra Historia</h2>
+      
+      <p class="content-text" style="margin-bottom: 1.5rem; max-width: 800px; margin-left: auto; margin-right: auto;" data-es="<strong style='color: #00aaff;'>Desarrolladora GAT</strong> (Gestión y Asesoría Técnica) es una empresa costarricense especializada en diseño, gestión, consultoría y construcción de proyectos inmobiliarios e infraestructura." data-en="<strong style='color: #00aaff;'>Desarrolladora GAT</strong> (Technical Management and Consulting) is a Costa Rican company specialized in design, management, consulting and construction of real estate and infrastructure projects.">
+        <strong style="color: #00aaff;">Desarrolladora GAT</strong> (Gestión y Asesoría Técnica) es una empresa costarricense especializada 
+        en diseño, gestión, consultoría y construcción de proyectos inmobiliarios e infraestructura.
+      </p>
+      
+      <p class="content-text" style="max-width: 800px; margin-left: auto; margin-right: auto;" data-es="Cuenta con profesionales de más de 20 años de experiencia y un enfoque basado en integridad, compromiso y calidad. La empresa combina experiencia técnica, innovación y una metodología de gestión moderna que garantiza resultados eficientes y de alto valor para sus clientes." data-en="It has professionals with more than 20 years of experience and an approach based on integrity, commitment and quality. The company combines technical experience, innovation and a modern management methodology that guarantees efficient and high-value results for its clients.">
+        Cuenta con profesionales de más de 20 años de experiencia y un enfoque basado en integridad, 
+        compromiso y calidad. La empresa combina experiencia técnica, innovación y una metodología 
+        de gestión moderna que garantiza resultados eficientes y de alto valor para sus clientes.
+      </p>
+    </div>
+    <div class="scroll-indicator" data-target="section-3"></div>
+  </section>
+
+  <!-- Sección 3: Pilares -->
+  <section class="info-section" id="section-3">
+    <div class="section-content">
+      <h2 class="section-title" data-es="Pilares Fundamentales" data-en="Fundamental Pillars">Pilares Fundamentales</h2>
+      
+      <p class="content-text" style="margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;" data-es="Actuamos siempre bajo estos principios para garantizar resultados eficientes y de alto valor en cada obra." data-en="We always act under these principles to guarantee efficient and high-value results in every project.">
+        Actuamos siempre bajo estos principios para garantizar resultados eficientes y de alto valor en cada obra.
+      </p>
+      
+      <div class="pillars-grid">
+        <div class="pillar-item">
+          <div class="pillar-bg"></div>
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24">
+              <!-- Icono de integridad/shield -->
+              <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
+            </svg>
+          </div>
+          <h3 class="pillar-title" data-es="Integridad" data-en="Integrity">Integridad</h3>
+        </div>
+        
+        <div class="pillar-item">
+          <div class="pillar-bg"></div>
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24">
+              <!-- Icono de compromiso/handshake -->
+              <path d="M16.5 4c-1.54 0-2.81 1.16-2.98 2.65L10.12 9h5.51l1.06-1.06c.63-.63.63-1.71 0-2.34-.63-.63-1.71-.63-2.34 0L14.5 6l-1.06-1.06c.88-.88 2.04-1.44 3.28-1.44 2.35 0 4.26 1.91 4.26 4.26 0 1.24-.56 2.4-1.44 3.28L18.62 12c1.36-1.36 2.21-3.26 2.21-5.35C20.83 4.9 18.93 3 16.5 3zM2 12v8h20v-8h-3v5H5v-5H2zm7 3h6v2H9v-2z"/>
+            </svg>
+          </div>
+          <h3 class="pillar-title" data-es="Compromiso" data-en="Commitment">Compromiso</h3>
+        </div>
+        
+        <div class="pillar-item">
+          <div class="pillar-bg"></div>
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24">
+              <!-- Icono de calidad/star -->
+              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+            </svg>
+          </div>
+          <h3 class="pillar-title" data-es="Calidad" data-en="Quality">Calidad</h3>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator" data-target="section-4"></div>
+  </section>
+
+  <!-- Sección 4: Propuesta de Valor -->
+  <section class="info-section" id="section-4">
+    <div class="section-content">
+      <h2 class="section-title" data-es="Propuesta de Valor" data-en="Value Proposition">Propuesta de Valor</h2>
+      
+      <p class="content-text" style="max-width: 800px; margin: 0 auto 2rem;" data-es="Desarrolladora GAT ofrece soluciones integrales que abarcan todo el ciclo de vida del proyecto: diseño arquitectónico, ingeniería, modelado BIM, gerencia de proyectos, supervisión técnica, ejecución de obra civil, presupuesto, gestión ambiental y control de calidad." data-en="Desarrolladora GAT offers comprehensive solutions that cover the entire project lifecycle: architectural design, engineering, BIM modeling, project management, technical supervision, civil works execution, budgeting, environmental management and quality control.">
+        Desarrolladora GAT ofrece soluciones integrales que abarcan todo el ciclo de vida del proyecto: 
+        diseño arquitectónico, ingeniería, modelado BIM, gerencia de proyectos, supervisión técnica, 
+        ejecución de obra civil, presupuesto, gestión ambiental y control de calidad.
+      </p>
+      
+      <div class="highlight-text" style="max-width: 800px; margin: 3rem auto;">
+        <p class="content-text" style="margin: 0;" data-es="En el desarrollo habitacional de alto valor, operamos bajo la marca <strong style='color: #00aaff;'>NovaHomes</strong>, la cual utiliza nuestra metodología <strong style='color: #00aaff;'>DCI (Diseño Colaborativo Integrado)</strong>, que incluye trabajo colaborativo en tiempo real, integración de presupuesto y diseño, y participación activa del cliente en cada decisión." data-en="In high-value residential development, we operate under the <strong style='color: #00aaff;'>Novahomes</strong> brand, which uses our <strong style='color: #00aaff;'>DCI (Integrated Collaborative Design)</strong> methodology, which includes real-time collaborative work, budget and design integration, and active client participation in every decision.">
+          En el desarrollo habitacional de alto valor, operamos bajo la marca <strong style="color: #00aaff;">NovaHomes</strong>, 
+          la cual utiliza nuestra metodología <strong style="color: #00aaff;">DCI (Diseño Colaborativo Integrado)</strong>, 
+          que incluye trabajo colaborativo en tiempo real, integración de presupuesto y diseño, 
+          y participación activa del cliente en cada decisión.
+        </p>
+      </div>
+      
+      <p class="content-text" style="max-width: 800px; margin: 0 auto 3rem;" data-es="Esta metodología garantiza transparencia total, reducción de reprocesos y una experiencia premium durante el proceso constructivo." data-en="This methodology guarantees total transparency, reduction of rework and a premium experience during the construction process.">
+        Esta metodología garantiza transparencia total, reducción de reprocesos y una experiencia 
+        premium durante el proceso constructivo.
+      </p>
+
+      <!-- Enlace a NovaHomes -->
+      <div class="nova-link-container">
+        <a href="https://www.novahomescr.com" 
+        class="img-button" 
+        aria-label="Ir a NovaHomes" 
+        title="Ir a NovaHomes"
+        target="_blank" 
+        rel="noopener noreferrer">
+          <img src="/img/pack1/novahomes.png" alt="Logo de NovaHomes">
+        </a>
+        
+      </div>
+    <!--<div class="nova-link-container">
+        <a href="https://novahomescr.com" target="_blank" class="nova-link">
+          <span>Conoce más sobre NovaHomes</span>
+          <svg viewBox="0 0 24 24">
+            <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+          </svg>
+        </a>
+      </div>
+        -->
+     </div>
+  </section>
+ 
+ <script src="/js/mision.js"></script>
+
+<!--SECTION-E--> 
+<!-- Seccion Pilares --> 
+ <section id="pilares-main">
+   <!-- Sección 1: Desarrollo Inmobiliario -->
+  <section class="section-1">
+    <h2 class="section-title" data-es="Sector Inmobiliario" data-en="Real Estate Sector">Sector Inmobiliario</h2>
+    <p class="section-subtitle" data-es="A través de nuestra marca especializada, NovaHomes, ofrecemos construcción llave en mano y diseño premium. Nos enfocamos en la personalización y una experiencia premium para el cliente, utilizando nuestra metodología exclusiva DCI para garantizar transparencia total." data-en="Through our specialized brand, NovaHomes, we offer turnkey construction and premium design. We focus on personalization and a premium experience for the client, using our exclusive DCI methodology to guarantee total transparency.">
+      A través de nuestra marca especializada, NovaHomes, ofrecemos construcción llave en mano y diseño premium. 
+      Nos enfocamos en la personalización y una experiencia premium para el cliente, utilizando nuestra metodología 
+      exclusiva DCI para garantizar transparencia total.
+    </p>
+    
+    <div class="cards-container">
+      
+      <!-- Card 1 -->
+      <div class="card active" data-card="0">
+        <div class="card-image">
+          <img src="/img/sector1/14.webp" alt="Viviendas de Alto Valor">
+        </div>
+        <div class="card-text">
+          <h3 data-es="Viviendas de Alto Valor" data-en="High-Value Homes">Viviendas de Alto Valor</h3>
+          <p data-es="Proyectos residenciales exclusivos con un rango de inversión entre $500,000 y $2,500,000, diseñados para superar las expectativas de los clientes más exigentes." data-en="Exclusive residential projects with an investment range between $500,000 and $2,500,000, designed to exceed the expectations of the most demanding clients.">Proyectos residenciales exclusivos con un rango de inversión entre $500,000 y $2,500,000, diseñados para superar las expectativas de los clientes más exigentes.</p>
+          <ul class="features-list">
+            <li data-es="Diseño arquitectónico premium" data-en="Premium architectural design">Diseño arquitectónico premium</li>
+            <li data-es="Materiales de primera calidad" data-en="First-class materials">Materiales de primera calidad</li>
+            <li data-es="Ubicaciones estratégicas" data-en="Strategic locations">Ubicaciones estratégicas</li>
+            <li data-es="Valorización garantizada" data-en="Guaranteed appreciation">Valorización garantizada</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card" data-card="1">
+        <div class="card-image">
+          <img src="/img/sector1/07.webp" alt="Metodología DCI">
+        </div>
+        <div class="card-text">
+          <h3 data-es="Metodología DCI" data-en="DCI Methodology">Metodología DCI</h3>
+          <p data-es="Diseño Colaborativo Integrado: Una metodología exclusiva que transforma la experiencia de construcción." data-en="Integrated Collaborative Design: An exclusive methodology that transforms the construction experience.">Diseño Colaborativo Integrado: Una metodología exclusiva que transforma la experiencia de construcción.</p>
+          <ul class="features-list">
+            <li data-es="Trabajo en tiempo real con el cliente" data-en="Real-time work with the client">Trabajo en tiempo real con el cliente</li>
+            <li data-es="Integración completa de presupuesto y diseño" data-en="Complete integration of budget and design">Integración completa de presupuesto y diseño</li>
+            <li data-es="Visualizaciones 3D interactivas" data-en="Interactive 3D visualizations">Visualizaciones 3D interactivas</li>
+            <li data-es="Transparencia total en costos" data-en="Total cost transparency">Transparencia total en costos</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card" data-card="2">
+        <div class="card-image">
+          <img src="/img/sector1/08.webp" alt="Experiencia del Cliente">
+        </div>
+        <div class="card-text">
+          <h3 data-es="Experiencia del Cliente" data-en="Client Experience">Experiencia del Cliente</h3>
+          <p data-es="Un enfoque centrado en el cliente que transforma el proceso de construcción en una experiencia memorable." data-en="A client-centered approach that transforms the construction process into a memorable experience.">Un enfoque centrado en el cliente que transforma el proceso de construcción en una experiencia memorable.</p>
+          <ul class="features-list">
+            <li data-es="Participación activa en cada decisión" data-en="Active participation in every decision">Participación activa en cada decisión</li>
+            <li data-es="Seguimiento personalizado con ingeniero responsable" data-en="Personalized follow-up with responsible engineer">Seguimiento personalizado con ingeniero responsable</li>
+            <li data-es="Comunicación directa y constante" data-en="Direct and constant communication">Comunicación directa y constante</li>
+            <li data-es="Portal del cliente con actualizaciones en vivo" data-en="Client portal with live updates">Portal del cliente con actualizaciones en vivo</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="card" data-card="3">
+        <div class="card-image">
+          <img src="/img/sector1/05.webp" alt="Transparencia y Eficiencia">
+        </div>
+        <div class="card-text">
+          <h3 data-es="Transparencia y Eficiencia" data-en="Transparency and Efficiency">Transparencia y Eficiencia</h3>
+          <p data-es="Sistemas avanzados que garantizan claridad en cada etapa del proyecto, optimizando recursos y tiempos." data-en="Advanced systems that guarantee clarity at every stage of the project, optimizing resources and time.">Sistemas avanzados que garantizan claridad en cada etapa del proyecto, optimizando recursos y tiempos.</p>
+          <ul class="features-list">
+            <li data-es="Sistema de cotización en línea en tiempo real" data-en="Real-time online quotation system">Sistema de cotización en línea en tiempo real</li>
+            <li data-es="Selección inteligente de acabados" data-en="Smart finish selection">Selección inteligente de acabados</li>
+            <li data-es="Reducción de reprocesos hasta en un 40%" data-en="Reduction of rework by up to 40%">Reducción de reprocesos hasta en un 40%</li>
+            <li data-es="Optimización de costos garantizada" data-en="Guaranteed cost optimization">Optimización de costos garantizada</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Indicadores -->
+      <div class="card-indicators">
+        <span class="indicator active" data-index="0"></span>
+        <span class="indicator" data-index="1"></span>
+        <span class="indicator" data-index="2"></span>
+        <span class="indicator" data-index="3"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 2: Infraestructura Civil -->
+  <section class="section-2">
+    <h2 class="section-title" data-es="Desarrollo de Infraestructura" data-en="Infrastructure Development"> Desarrollo de Infraestructura</h2>
+    <p class="section-subtitle" data-es="Desarrolladora GAT ejecuta obras de infraestructura pública y privada con estrictos estándares de calidad, utilizando ingeniería de valor, laboratorios acreditados y un enfoque de eficiencia y optimización de recursos. Entre los proyectos típicos se incluyen: movimiento de tierras, obras viales, estructuras de concreto, sistemas hidráulicos, edificaciones institucionales y urbanizaciones." data-en="Desarrolladora GAT executes public and private infrastructure works with strict quality standards, using value engineering, accredited laboratories and an approach of efficiency and resource optimization. Typical projects include: earthworks, road works, concrete structures, hydraulic systems, institutional buildings and urbanizations.">
+      Desarrolladora GAT ejecuta obras de infraestructura pública y privada con estrictos estándares de calidad, utilizando ingeniería de valor, 
+      laboratorios acreditados y un enfoque de eficiencia y optimización de recursos. Entre los proyectos típicos se incluyen: 
+      movimiento de tierras, obras viales, estructuras de concreto, sistemas hidráulicos, edificaciones institucionales y urbanizaciones.
+    </p>
+    
+    <div class="cards-container">
+      
+      <!-- Card 1 -->
+      <div class="card active" data-card="0">
+        <div class="card-image">
+          <img src="/img/sector2/11.webp"" alt="Calidad y Estándares">
+        </div>
+        <div class="card-text">
+          <h3 data-es="Calidad y Estándares" data-en="Quality and Standards">Calidad y Estándares</h3>
+          <p data-es="Cumplimiento riguroso de los más altos estándares internacionales en todas nuestras obras." data-en="Rigorous compliance with the highest international standards in all our works.">Cumplimiento riguroso de los más altos estándares internacionales en todas nuestras obras.</p>
+          <ul class="features-list">
+            <li data-es="Laboratorios de control de calidad acreditados" data-en="Accredited quality control laboratories">Laboratorios de control de calidad acreditados</li>
+            <li data-es="Supervisión técnica permanente" data-en="Permanent technical supervision">Supervisión técnica permanente</li>
+            <li data-es="Certificaciones de materiales" data-en="Material certifications">Certificaciones de materiales</li>
+            <li data-es="Protocolos de seguridad estrictos" data-en="Strict safety protocols">Protocolos de seguridad estrictos</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card" data-card="1">
+        <div class="card-image">
+          <img src="/img/sector2/09.webp" alt="Ingeniería de Valor">
+        </div>
+        <div class="card-text">
+          <h3 data-es="Ingeniería de Valor" data-en="Value Engineering">Ingeniería de Valor</h3>
+          <p data-es="Optimización inteligente de recursos manteniendo la funcionalidad y durabilidad de las estructuras." data-en="Intelligent resource optimization while maintaining the functionality and durability of structures.">Optimización inteligente de recursos manteniendo la funcionalidad y durabilidad de las estructuras.</p>
+          <ul class="features-list">
+            <li data-es="Análisis de valor en cada etapa" data-en="Value analysis at each stage">Análisis de valor en cada etapa</li>
+            <li data-es="Optimización de diseños constructivos" data-en="Optimization of construction designs">Optimización de diseños constructivos</li>
+            <li data-es="Reducción de costos sin comprometer calidad" data-en="Cost reduction without compromising quality">Reducción de costos sin comprometer calidad</li>
+            <li data-es="Soluciones técnicas innovadoras" data-en="Innovative technical solutions">Soluciones técnicas innovadoras</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card" data-card="2">
+        <div class="card-image">
+          <img src="/img/sector2/16.webp" alt="Tipos de Obra">
+        </div>
+        <div class="card-text">
+          <h3 data-es="Tipos de Obra Especializados" data-en="Specialized Work Types">Tipos de Obra Especializados</h3>
+          <p data-es="Amplia experiencia en diversas especialidades de la construcción civil." data-en="Extensive experience in various civil construction specialties.">Amplia experiencia en diversas especialidades de la construcción civil.</p>
+          <ul class="features-list">
+            <li data-es="Movimiento de tierras y excavaciones" data-en="Earthworks and excavations">Movimiento de tierras y excavaciones</li>
+            <li data-es="Obras viales y pavimentación" data-en="Road works and paving">Obras viales y pavimentación</li>
+            <li data-es="Estructuras de concreto armado" data-en="Reinforced concrete structures">Estructuras de concreto armado</li>
+            <li data-es="Sistemas hidráulicos y sanitarios" data-en="Hydraulic and sanitary systems">Sistemas hidráulicos y sanitarios</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="card" data-card="3">
+        <div class="card-image">
+          <img src="/img/sector2/05.webp" alt="Proyectos a Gran Escala">
+        </div>
+        <div class="card-text">
+          <h3 data-es="Proyectos a Gran Escala" data-en="Large-Scale Projects">Proyectos a Gran Escala</h3>
+          <p data-es="Capacidad comprobada para ejecutar proyectos complejos de gran envergadura." data-en="Proven capacity to execute complex large-scale projects.">Capacidad comprobada para ejecutar proyectos complejos de gran envergadura.</p>
+          <ul class="features-list">
+            <li data-es="Urbanizaciones completas" data-en="Complete urbanizations">Urbanizaciones completas</li>
+            <li data-es="Edificaciones institucionales" data-en="Institutional buildings">Edificaciones institucionales</li>
+            <li data-es="Proyectos comerciales" data-en="Commercial projects">Proyectos comerciales</li>
+            <li data-es="Infraestructura pública" data-en="Public infrastructure">Infraestructura pública</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Indicadores -->
+      <div class="card-indicators">
+        <span class="indicator active" data-index="0"></span>
+        <span class="indicator" data-index="1"></span>
+        <span class="indicator" data-index="2"></span>
+        <span class="indicator" data-index="3"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 3: Consultoría -->
+  <section class="section-3">
+    <h2 class="section-title" data-es="Servicios de Consultoría" data-en="Consulting Services">Servicios de Consultoría</h2>
+    <p class="section-subtitle" data-es="A través de nuestra estructura de servicios especializados, Desarrolladora GAT brinda asesoría orientada a maximizar la rentabilidad, mitigar riesgos y asegurar el cumplimiento de plazos y estándares en proyectos de construcción e infraestructura." data-en="Through our specialized services structure, Desarrolladora GAT provides consulting oriented to maximize profitability, mitigate risks and ensure compliance with deadlines and standards in construction and infrastructure projects.">
+      A través de nuestra estructura de servicios especializados, Desarrolladora GAT brinda asesoría orientada a maximizar la rentabilidad, 
+      mitigar riesgos y asegurar el cumplimiento de plazos y estándares en proyectos de construcción e infraestructura.
+    </p>
+    
+    <div class="cards-container">
+      
+      <!-- Card 1 -->
+      <div class="card active" data-card="0">
+        <div class="card-image">
+          <img src="/img/sector3/01.webp"" alt="Asesoría Integral">
+        </div>
+        <div class="card-text">
+          <h3 data-es="Asesoría Integral" data-en="Comprehensive Consulting">Asesoría Integral</h3>
+          <p data-es="Servicios completos desde la conceptualización hasta la ejecución del proyecto." data-en="Complete services from project conception to execution.">Servicios completos desde la conceptualización hasta la ejecución del proyecto.</p>
+          <ul class="features-list">
+            <li data-es="Formulación y factibilidad de proyectos" data-en="Project formulation and feasibility">Formulación y factibilidad de proyectos</li>
+            <li data-es="Dirección y supervisión técnica" data-en="Technical direction and supervision">Dirección y supervisión técnica</li>
+            <li data-es="Análisis financiero para impresión" data-en="Financial analysis for printing">Analisis financiero para impresión de presupuesto</li>
+            <li data-es="Gestión de permisos y licencias" data-en="Permit and license management">Gestión de permisos y licencias</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card" data-card="1">
+        <div class="card-image">
+          <img src="/img/sector3/11.webp" alt="Coaching Empresarial">
+        </div>
+        <div class="card-text">
+          <h3 data-es="Coaching Empresarial" data-en="Business Coaching">Coaching Empresarial</h3>
+          <p data-es="Fortalecimiento de capacidades internas para empresas del sector construcción." data-en="Strengthening internal capabilities for construction sector companies.">Fortalecimiento de capacidades internas para empresas del sector construcción.</p>
+          <ul class="features-list">
+            <li data-es="Apoyo para fortalecer departamentos de proyectos" data-en="Support to strengthen project departments">Apoyo para fortalecer departamentos de proyectos</li>
+            <li data-es="Implementación de procedimientos estandarizados" data-en="Implementation of standardized procedures">Implementación de procedimientos estandarizados</li>
+            <li data-es="Capacitación especializada de equipos" data-en="Specialized team training">Capacitación especializada de equipos</li>
+            <li data-es="Desarrollo de sistemas de control" data-en="Control systems development">Desarrollo de sistemas de control</li>
+            <li data-es="Asesoría para licitaciones" data-en="Bidding consulting">Asesoría para licitaciones</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card" data-card="2">
+        <div class="card-image">
+          <img src="/img/sector3/15.webp" alt="Representación del Cliente">
+        </div>
+        <div class="card-text">
+          <h3 data-es="Representación del Cliente" data-en="Client Representation">Representación del Cliente</h3>
+          <p data-es="Servicio de Owner's Engineer para proteger los intereses del propietario." data-en="Owner's Engineer service to protect the owner's interests.">Servicio de Owner's Engineer para proteger los intereses del propietario.</p>
+          <ul class="features-list">
+            <li data-es="Gestión administrativa de obras" data-en="Administrative management of works">Gestión administrativa de obras</li>
+            <li data-es="Control financiero y presupuestario" data-en="Financial and budgetary control">Control financiero y presupuestario</li>
+            <li data-es="Supervisión independiente" data-en="Independent supervision">Supervisión independiente</li>
+            <li data-es="Informes de avance detallados" data-en="Detailed progress reports">Informes de avance detallados</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="card" data-card="3">
+        <div class="card-image">
+          <img src="/img/sector3/09.webp" alt="Planificación y Control">
+        </div>
+        <div class="card-text">
+          <h3 data-es="Inspección, Planificación y Control" data-en="Inspection, Planning and Control">Inspección, Planificación y Control</h3>
+          <p data-es="Herramientas avanzadas para la gestión eficiente de proyectos." data-en="Advanced tools for efficient project management.">Herramientas avanzadas para la gestión eficiente de proyectos.</p>
+          <ul class="features-list">
+            <li data-es="Planificación estratégica" data-en="Strategic planning">Planificación estratégica</li>
+            <li data-es="Control de presupuesto y cronogramas" data-en="Budget and schedule control">Control de presupuesto y cronogramas</li>
+            <li data-es="Sistemas de control de calidad" data-en="Quality control systems">Sistemas de control de calidad</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Indicadores -->
+      <div class="card-indicators">
+        <span class="indicator active" data-index="0"></span>
+        <span class="indicator" data-index="1"></span>
+        <span class="indicator" data-index="2"></span>
+        <span class="indicator" data-index="3"></span>
+      </div>
+    </div>
+  </section>
+ <script src="/js/pilares.js"></script>
+ </section>
+ <!--SECTION-->
+ <!-- Contacto -->
+<section id="contacto" class="contacto-section">
+  <!-- Google Maps como fondo -->
+  <div class="map-background">
+    <img 
+      src="/img/pack1/map.webp" 
+      alt="Ubicación de Plaza Futura"
+      width="100%"
+      height="100%"
+      style="object-fit: cover;"
+    >
+  </div>
+
+  <!-- Formulario sobre el mapa -->
+  <div class="contact-form-container">
+    <h2 data-es="Contáctanos" data-en="Contact Us">Contáctanos</h2>
+    <form action="enviar.php" method="POST" class="contact-form">
+      <input type="text" name="nombre" placeholder="Nombre" data-placeholder-es="Nombre" data-placeholder-en="Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <textarea name="mensaje" rows="4" placeholder="Mensaje" data-placeholder-es="Mensaje" data-placeholder-en="Message" required></textarea>
+      
+      <!-- Captcha -->
+      <div class="g-recaptcha" data-sitekey="TU_SITE_KEY_AQUI"></div>
+      
+      <button type="submit" class="btn" data-es="Enviar" data-en="Send">Enviar</button>
+    </form>
+  </div>
+      </div>
+</section>
+
+<!-- Script de Google reCAPTCHA -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="js/main.js"></script>
+</body>
+
+<!--SECTION-->  
+<!-- Footer -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-logo">
+      <img src="img/Logo2.png" alt="GAT Logo">
+      <p data-es="Integridad, Compromiso y Calidad en construcción." data-en="Integrity, Commitment and Quality in construction.">Integridad, Compromiso y Calidad en construcción.</p>
+    </div>
+    <div class="footer-links">
+      <h4 data-es="Enlaces" data-en="Links">Enlaces</h4>
+      <ul>
+        <li><a href="#heroSection" data-es="Inicio" data-en="Home">Inicio</a></li>
+        <li><a href="#section-1" data-es="Quiénes Somos" data-en="About Us">Quiénes Somos</a></li>
+        <li><a href="#pilares-main" data-es="Servicios" data-en="Services">Servicios</a></li>
+        <!--<li><a href="#proyectos">Proyectos</a></li>-->
+        <li><a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h4 data-es="Contacto" data-en="Contact">Contacto</h4>
+      <p>
+        <strong data-es="Dirección Oficina No 1:" data-en="Office Address No 1:">Dirección Oficina No 1:</strong>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=San+Antonio+de+Bel%C3%A9n,+Provincia+de+Heredia,+Costa+Rica" target="_blank" rel="noopener noreferrer">
+          San Antonio de Belén, Provincia de Heredia, Costa Rica
+        </a>
+      </p>
+      <p>
+        <strong data-es="Dirección Oficina No 2:" data-en="Office Address No 2:">Dirección Oficina No 2:</strong>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Plaza+Futura,+Local+No+17,+Provincia+de+Guanacaste,+Liberia,+Costa+Rica" target="_blank" rel="noopener noreferrer">
+          Plaza Futura, Local No 17, Provincia de Guanacaste, Liberia, Costa Rica.
+        </a>
+      </p>
+      <p><strong>Tel:</strong> (506) 2102-7099</p>
+      <p><strong>Email:</strong> contacto@gatcr.com</p>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p data-es="&copy; 2025 Desarrolladora GAT. Todos los derechos reservados." data-en="&copy; 2025 Desarrolladora GAT. All rights reserved.">&copy; 2025 Desarrolladora GAT. Todos los derechos reservados.</p>
+  </div>
+</footer>
+</html>
