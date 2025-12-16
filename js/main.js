@@ -107,7 +107,7 @@ const slidesData = [
             en: "Novahomes: turnkey construction and premium design with DCI methodology for total transparency and personalized experience."
         },
         //imageUrl: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80"
-        imageUrl: "/img/sector1/06.webp"
+        imageUrl: "img/sector1/06.webp"
     },
     {
         id: "slide-background-2",
@@ -121,7 +121,7 @@ const slidesData = [
             en: "Public and private works with efficiency, resource optimization and value engineering for solid technical solutions and long-term vision."
         },
         //imageUrl: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80"
-        imageUrl: "/img/sector2/11.webp"
+        imageUrl: "img/sector2/11.webp"
     },
     {
         id: "slide-background-3",
@@ -135,7 +135,7 @@ const slidesData = [
             en: "Our team of specialized consultants strengthens project departments, ensures successful executions and guarantees return on investment as a strategic partner."
         },
         //imageUrl: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80"
-        imageUrl: "/img/sector3/08.webp"
+        imageUrl: "img/sector3/08.webp"
     }
 ];
 

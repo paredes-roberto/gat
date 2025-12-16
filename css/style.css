@@ -630,10 +630,10 @@ nav a:hover,
 }
 
 /* Background images */
-.service-box.residencial { background-image: url("/img/services1.jpeg"); }
-.service-box.industrial { background-image: url("/img/services2.jpg"); }
-.service-box.gobierno { background-image: url("/img/services3.jpg"); }
-.service-box.municipal { background-image: url("/img/services4.JPG"); }
+.service-box.residencial { background-image: url("img/services1.jpeg"); }
+.service-box.industrial { background-image: url("img/services2.jpg"); }
+.service-box.gobierno { background-image: url("img/services3.jpg"); }
+.service-box.municipal { background-image: url("img/services4.JPG"); }
 
 /*.service-box.residencial { background-image: url("https://picsum.photos/id/1018/600/400"); }
 .service-box.industrial { background-image: url("https://picsum.photos/id/1043/600/400"); }
