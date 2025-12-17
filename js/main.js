@@ -103,8 +103,8 @@ const slidesData = [
             en: "Real Estate Development"
         },
         description: {
-            es: "Novahomes: construcción llave en mano y diseño premium con metodología DCI para transparencia total y experiencia personalizada.",
-            en: "Novahomes: turnkey construction and premium design with DCI methodology for total transparency and personalized experience."
+            es: "Diseño y construcción llave en mano y diseño premium con metodología DCI para transparencia total y experiencia personalizada.",
+            en: "Turnkey design and construction, plus premium design services using the DCI methodology to ensure full transparency and a fully personalized experience."
         },
         //imageUrl: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80"
         imageUrl: "img/sector1/06.webp"
@@ -243,7 +243,7 @@ function changeSlide(index) {
 function startAutoSlide() {
     slideInterval = setInterval(() => {
         changeSlide(currentSlideIndex + 1);
-    }, 8000);
+    }, 6000);
 }
 
 /**

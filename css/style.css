@@ -699,7 +699,7 @@ nav a:hover,
   z-index: 1;
 }
 
-.contact-form-container {
+/*.contact-form-container {
   position: relative;
   z-index: 2;
   background: rgba(255, 255, 255, 0.92);
@@ -707,11 +707,35 @@ nav a:hover,
   margin: auto;
   padding: 2rem;
   border-radius: 16px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 14px rgba(44, 25, 105, 0.2);
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}*/
+.contact-form-container {
+  position: relative;
+  z-index: 2;
+
+  /* Glassmorphism */
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 18px;
+
+  max-width: 500px;
+  margin: auto;
+  padding: 2.2rem;
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.15);
+
   top: 50%;
   transform: translateY(-50%);
   text-align: center;
 }
+
 
 .contact-form-container h2 {
   font-size: 2rem;
@@ -719,18 +743,36 @@ nav a:hover,
   color: #002b5b;
 }
 
-.contact-form input,
+/*.contact-form input,
 .contact-form textarea {
   width: 100%;
   padding: 0.8rem;
   margin: 0.6rem 0;
   border: 1px solid #ccc;
   border-radius: 8px;
-  /*font-family: 'Urbanist', sans-serif;*/
   font-family: 'Urbanist', sans-serif;
 
+}*/
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.85rem;
+  margin: 0.6rem 0;
+
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+
+  font-family: 'Urbanist', sans-serif;
+  color: #002b5b;
 }
 
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(0, 43, 91, 0.7);
+}
+
+/*
 .contact-form button {
   margin-top: 1rem;
   background: #012247;
@@ -740,7 +782,24 @@ nav a:hover,
   border-radius: 30px;
   cursor: pointer;
   transition: background 0.3s;
+}*/
+.contact-form button {
+  margin-top: 1.2rem;
+  background: linear-gradient(135deg, #012247, #003b80);
+  color: white;
+  border: none;
+  padding: 0.9rem 2rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
+
+.contact-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(1, 34, 71, 0.35);
+}
+
 
 .contact-form button:hover {
   background: #012247;
