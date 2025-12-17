@@ -381,6 +381,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // 3. Configurar eventos del hero
     setupHeroEvents();
+
+    // 4. Iniciar efecto touch giratorio horizonta
+    setupHeroTouch();
     
     // 4. Iniciar efectos de scroll
     initScrollEffects();
@@ -396,3 +399,56 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('load', () => {
     document.body.offsetHeight; // Forzar reflow
 });
+
+// =====================
+// HERO - TOUCH / SWIPE
+// =====================
+function setupHeroTouch() {
+    const hero = document.getElementById('hero-main-section');
+
+    let startX = 0;
+    let startY = 0;
+    let endX = 0;
+    let endY = 0;
+    let isSwiping = false;
+
+    const SWIPE_THRESHOLD = 50; // distancia mínima en px
+
+    hero.addEventListener('touchstart', (e) => {
+        if (e.touches.length !== 1) return;
+
+        clearInterval(slideInterval); // Pausa auto-slide
+
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        isSwiping = true;
+    }, { passive: true });
+
+    hero.addEventListener('touchmove', (e) => {
+        if (!isSwiping) return;
+
+        endX = e.touches[0].clientX;
+        endY = e.touches[0].clientY;
+    }, { passive: true });
+
+    hero.addEventListener('touchend', () => {
+        if (!isSwiping) return;
+
+        const deltaX = endX - startX;
+        const deltaY = endY - startY;
+
+        // Detectar swipe horizontal (ignorar scroll vertical)
+        if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > SWIPE_THRESHOLD) {
+            if (deltaX < 0) {
+                // Swipe izquierda → siguiente slide
+                changeSlide(currentSlideIndex + 1);
+            } else {
+                // Swipe derecha → slide anterior
+                changeSlide(currentSlideIndex - 1);
+            }
+        }
+
+        isSwiping = false;
+        startAutoSlide(); // Reanudar auto-slide
+    });
+}
