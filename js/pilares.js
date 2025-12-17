@@ -34,13 +34,78 @@ function initCarousels() {
       currentCard = index;
     }
 
+    // =====================
+// TOUCH / SWIPE por sección
+// =====================
+let startX = 0;
+let startY = 0;
+let endX = 0;
+let endY = 0;
+
+const SWIPE_THRESHOLD = 60;
+
+section.addEventListener('touchstart', (e) => {
+  if (e.touches.length !== 1 || isTouchSliding) return;
+
+  clearInterval(rotationInterval);
+
+  startX = e.touches[0].clientX;
+  startY = e.touches[0].clientY;
+}, { passive: true });
+
+section.addEventListener('touchmove', (e) => {
+  if (isTouchSliding) return;
+
+  endX = e.touches[0].clientX;
+  endY = e.touches[0].clientY;
+}, { passive: true });
+
+section.addEventListener('touchend', () => {
+  if (isTouchSliding) return;
+
+  const deltaX = endX - startX;
+  const deltaY = endY - startY;
+
+  if (
+    Math.abs(deltaX) > Math.abs(deltaY) &&
+    Math.abs(deltaX) > SWIPE_THRESHOLD
+  ) {
+    isTouchSliding = true;
+
+    if (deltaX < 0) {
+      // Swipe izquierda → siguiente card
+      showCard((currentCard + 1) % cards.length);
+    } else {
+      // Swipe derecha → card anterior
+      showCard((currentCard - 1 + cards.length) % cards.length);
+    }
+
+    clearTimeout(touchCooldownTimeout);
+    touchCooldownTimeout = setTimeout(() => {
+      isTouchSliding = false;
+      startRotation(); // 🔁 vuelve al ritmo normal
+    }, 600);
+  } else {
+    startRotation();
+  }
+});
+
+
     // Auto-rotate
     function startRotation() {
+    clearInterval(rotationInterval);
+    rotationInterval = setInterval(() => {
+      currentCard = (currentCard + 1) % cards.length;
+      showCard(currentCard);
+      }, AUTO_ROTATE_TIME);
+    }
+
+   /* function startRotation() {
       rotationInterval = setInterval(() => {
         currentCard = (currentCard + 1) % cards.length;
         showCard(currentCard);
       }, AUTO_ROTATE_TIME);
-    }
+    }*/
 
     function resetRotation() {
       clearInterval(rotationInterval);
