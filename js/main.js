@@ -30,7 +30,7 @@ function showProjectSlide(n) {
 setInterval(() => {
   projectIndex = (projectIndex + 1) % projectSlides.length;
   showProjectSlide(projectIndex);
-}, 6000);
+}, 8000);
 
 // Initialize first slide
 showProjectSlide(projectIndex);
@@ -94,6 +94,9 @@ if (langBtn) {
 // ------
 // HERO
 //-------
+let isTouchSliding = false;
+let touchCooldownTimeout = null;
+
 const slidesData = [
     {
         id: "slide-background-1",
@@ -401,7 +404,7 @@ window.addEventListener('load', () => {
 });
 
 // =====================
-// HERO - TOUCH / SWIPE
+// HERO - TOUCH / SWIPE (FIXED)
 // =====================
 function setupHeroTouch() {
     const hero = document.getElementById('hero-main-section');
@@ -410,45 +413,53 @@ function setupHeroTouch() {
     let startY = 0;
     let endX = 0;
     let endY = 0;
-    let isSwiping = false;
 
-    const SWIPE_THRESHOLD = 50; // distancia mínima en px
+    const SWIPE_THRESHOLD = 60; // más natural en mobile
 
     hero.addEventListener('touchstart', (e) => {
-        if (e.touches.length !== 1) return;
+        if (e.touches.length !== 1 || isAnimating || isTouchSliding) return;
 
-        clearInterval(slideInterval); // Pausa auto-slide
+        clearInterval(slideInterval); // pausa real
 
         startX = e.touches[0].clientX;
         startY = e.touches[0].clientY;
-        isSwiping = true;
     }, { passive: true });
 
     hero.addEventListener('touchmove', (e) => {
-        if (!isSwiping) return;
+        if (isAnimating || isTouchSliding) return;
 
         endX = e.touches[0].clientX;
         endY = e.touches[0].clientY;
     }, { passive: true });
 
     hero.addEventListener('touchend', () => {
-        if (!isSwiping) return;
+        if (isAnimating || isTouchSliding) return;
 
         const deltaX = endX - startX;
         const deltaY = endY - startY;
 
-        // Detectar swipe horizontal (ignorar scroll vertical)
-        if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > SWIPE_THRESHOLD) {
+        // Detectar swipe horizontal real
+        if (
+            Math.abs(deltaX) > Math.abs(deltaY) &&
+            Math.abs(deltaX) > SWIPE_THRESHOLD
+        ) {
+            isTouchSliding = true;
+
             if (deltaX < 0) {
-                // Swipe izquierda → siguiente slide
                 changeSlide(currentSlideIndex + 1);
             } else {
-                // Swipe derecha → slide anterior
                 changeSlide(currentSlideIndex - 1);
             }
-        }
 
-        isSwiping = false;
-        startAutoSlide(); // Reanudar auto-slide
+            // Cooldown para evitar múltiples disparos
+            clearTimeout(touchCooldownTimeout);
+            touchCooldownTimeout = setTimeout(() => {
+                isTouchSliding = false;
+                startAutoSlide(); // 👈 vuelve al ritmo normal
+            }, 600); // coincide con tu animación
+        } else {
+            // Si no fue swipe válido, reanuda auto-slide
+            startAutoSlide();
+        }
     });
 }
