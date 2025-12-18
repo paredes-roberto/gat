@@ -1850,3 +1850,165 @@ footer {
     font-size: 1rem;
   }
 }
+
+/*PARTNERS*/
+/* =====================================================
+   PARTNERS SECTION
+===================================================== */
+
+.partners-section {
+    padding: 6rem 5%;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.partners-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('https://www.transparenttextures.com/patterns/concrete-wall.png');
+    opacity: 0.03;
+    z-index: 0;
+}
+
+.partners-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.partners-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.partners-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.partners-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--accent-color);
+    border-radius: 2px;
+}
+
+.partners-header p {
+    max-width: 700px;
+    margin: 2rem auto 0;
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.7;
+}
+
+/* =====================================================
+   CAROUSEL CONTAINER
+===================================================== */
+
+.partners-carousel-container {
+    position: relative;
+    overflow: hidden;
+    padding: 3rem 0;
+}
+
+/* =====================================================
+   CAROUSEL TRACK (MOVIMIENTO POR JS)
+===================================================== */
+
+.partners-carousel {
+    display: flex;
+    gap: 3rem;
+    width: max-content;
+    will-change: transform;
+}
+
+/* =====================================================
+   PARTNER CARD
+===================================================== */
+
+.partner-logo-item {
+    flex: 0 0 300px;
+    height: 180px;
+    padding: 2rem;
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.partner-logo-item:hover {
+    transform: translateY(-8px) scale(1.04);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.partner-logo {
+    max-width: 85%;
+    max-height: 75%;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(0.7);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.partner-logo-item:hover .partner-logo {
+    filter: grayscale(0%) brightness(1);
+    transform: scale(1.1);
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1024px) {
+    .partners-carousel {
+        gap: 2.5rem;
+    }
+
+    .partner-logo-item {
+        flex: 0 0 260px;
+        height: 160px;
+        padding: 1.75rem;
+    }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+    .partners-carousel-container {
+        padding: 2rem 0;
+    }
+
+    .partners-carousel {
+        gap: 2rem;
+    }
+
+    .partner-logo-item {
+        flex: 0 0 240px;
+        height: 150px;
+        padding: 1.5rem;
+    }
+}
