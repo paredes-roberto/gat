@@ -1,0 +1,7 @@
+# Netlify redirects configuration
+# This file should be placed in the publish directory (usually root or dist)
+
+# Handle 404 errors - redirect to 404.html
+# The /* catch-all must be last
+/*    /404.html    404
+

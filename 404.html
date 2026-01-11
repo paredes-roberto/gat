@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 - Página No Encontrada | Desarrolladora GAT</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .not-found-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #012247 0%, #001a35 100%);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .not-found-content {
+      max-width: 600px;
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .error-code {
+      font-size: 8rem;
+      font-weight: 700;
+      color: #00aaff;
+      margin-bottom: 1rem;
+      line-height: 1;
+      text-shadow: 0 4px 20px rgba(0, 170, 255, 0.3);
+    }
+
+    .error-title {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    .error-message {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 2.5rem;
+      line-height: 1.6;
+    }
+
+    .home-button {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: #00aaff;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 170, 255, 0.3);
+    }
+
+    .home-button:hover {
+      background: #0088cc;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 170, 255, 0.4);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .error-code {
+        font-size: 6rem;
+      }
+
+      .error-title {
+        font-size: 2rem;
+      }
+
+      .error-message {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .error-code {
+        font-size: 4rem;
+      }
+
+      .error-title {
+        font-size: 1.5rem;
+      }
+
+      .error-message {
+        font-size: 0.95rem;
+      }
+
+      .home-button {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="not-found-container">
+    <div class="not-found-content">
+      <div class="error-code">404</div>
+      <h1 class="error-title" data-es="Página No Encontrada" data-en="Page Not Found">Página No Encontrada</h1>
+      <p class="error-message" data-es="Lo sentimos, la página que estás buscando no existe o ha sido movida." data-en="Sorry, the page you are looking for does not exist or has been moved.">
+        Lo sentimos, la página que estás buscando no existe o ha sido movida.
+      </p>
+      <a href="index.html" class="home-button" data-es="Volver al Inicio" data-en="Back to Home">Volver al Inicio</a>
+    </div>
+  </div>
+
+  <script>
+    // Simple language detection and toggle for 404 page
+    (function() {
+      const langBtn = document.createElement('button');
+      langBtn.id = 'lang-toggle-404';
+      langBtn.style.cssText = 'position: fixed; top: 20px; right: 20px; padding: 0.5rem 1rem; background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; cursor: pointer; font-family: Urbanist, sans-serif; z-index: 1000; transition: all 0.3s ease;';
+      langBtn.addEventListener('mouseenter', () => {
+        langBtn.style.background = 'rgba(255,255,255,0.2)';
+      });
+      langBtn.addEventListener('mouseleave', () => {
+        langBtn.style.background = 'rgba(255,255,255,0.1)';
+      });
+      
+      let currentLang = localStorage.getItem('site-lang') || (navigator.language.startsWith('en') ? 'en' : 'es');
+      
+      function setLanguage404(lang) {
+        document.querySelectorAll('[data-es]').forEach(el => {
+          const translation = el.getAttribute(`data-${lang}`);
+          if (translation) {
+            el.textContent = translation;
+          }
+        });
+        langBtn.textContent = lang === 'es' ? 'EN' : 'ES';
+        localStorage.setItem('site-lang', lang);
+      }
+      
+      langBtn.textContent = currentLang === 'es' ? 'EN' : 'ES';
+      langBtn.addEventListener('click', () => {
+        currentLang = currentLang === 'es' ? 'en' : 'es';
+        setLanguage404(currentLang);
+      });
+      
+      document.body.appendChild(langBtn);
+      setLanguage404(currentLang);
+    })();
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,3 @@
+# Custom 404 Error Page for Apache
+# This handles broken internal links, invalid URLs, deleted/renamed pages
+ErrorDocument 404 /404.html

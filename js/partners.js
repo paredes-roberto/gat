@@ -3,7 +3,7 @@ class PartnersCarousel {
         this.carousel = document.querySelector('.partners-carousel');
         this.container = document.querySelector('.partners-carousel-container');
 
-        this.speed = 0.5; // px por frame
+        this.speed = 0.5; // px per frame
         this.position = 0;
         this.paused = false;
 
