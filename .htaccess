@@ -231,7 +231,7 @@ AddDefaultCharset UTF-8
 # Prevents other sites from directly linking to your images
 # <IfModule mod_rewrite.c>
 #     RewriteCond %{HTTP_REFERER} !^$
-#     RewriteCond %{HTTP_REFERER} !^https?://(www\.)?yourdomain\.com [NC]
+#     RewriteCond %{HTTP_REFERER} !^https?://(www\.)?gatcr\.com [NC]
 #     RewriteRule \.(jpg|jpeg|png|gif|webp)$ - [F,L]
 # </IfModule>
 

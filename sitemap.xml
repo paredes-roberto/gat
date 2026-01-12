@@ -4,11 +4,10 @@
 <!-- Optimized for SEO 2026 Best Practices -->
 <!-- ===================================================== -->
 <!-- 
-  IMPORTANT: Replace YOURDOMAIN.com with your actual domain (e.g., gatcr.com)
   This sitemap helps search engines discover and index your pages efficiently.
   
   Sitemap Protocol: http://www.sitemaps.org/protocol.html
-  Last Modified: 2026-01-01 (Update this date when you modify pages)
+  Last Modified: 2026-01-12 (Update this date when you modify pages)
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -20,9 +19,9 @@
   <!-- ===================================================== -->
   <url>
     <!-- Absolute URL to homepage -->
-    <loc>https://YOURDOMAIN.com/</loc>
+    <loc>https://gatcr.com/</loc>
     <!-- Last modification date - Update when content changes -->
-    <lastmod>2026-01-01</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <!-- Priority: 1.0 = highest (homepage should be highest) -->
     <priority>1.0</priority>
     <!-- Change frequency: How often page content changes -->
@@ -33,8 +32,8 @@
   <!-- Main Index Page (if different from root) -->
   <!-- ===================================================== -->
   <url>
-    <loc>https://YOURDOMAIN.com/index.html</loc>
-    <lastmod>2026-01-01</lastmod>
+    <loc>https://gatcr.com/index.html</loc>
+    <lastmod>2026-01-12</lastmod>
     <!-- Slightly lower priority than root URL -->
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
@@ -62,7 +61,6 @@
   3. robots.txt already references this sitemap
   
   Update Instructions:
-  - Replace YOURDOMAIN.com with your actual domain
   - Update <lastmod> dates when you modify pages
   - Add new pages as you create them
   - Keep file under 50MB and 50,000 URLs (we're well under)

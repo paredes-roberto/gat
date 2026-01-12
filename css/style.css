@@ -13,8 +13,9 @@ body {
   color: #222;
   background: #f9f9f9;
 }
-
-/* Navbar */
+/*==============================================*/
+/* NAVBAR */
+/*==============================================*/
 /* Navbar base */
 header {
   position: fixed;
@@ -149,7 +150,9 @@ nav a:hover,
   }
 }
 
-/* ===== HERO PRINCIPAL ===== */
+/*==============================================*/
+/* HERO SECTION */
+/*==============================================*/
 /* MAIN CONTAINER OF THE HERO THAT OCCUPIES THE WHOLE SCREEN */
 .hero {
     position: relative;
@@ -639,7 +642,7 @@ nav a:hover,
 /*==============================================*/
 /* CONTACT SECTION */
 /*==============================================*/
-/* Contacto con mapa de fondo */
+/* CONTACT SECTION WITH IMAGE BACKGROUND */  
 .contacto-section {
   position: relative;
   height: 90vh;
@@ -1881,7 +1884,7 @@ footer {
 }
 
 /* =====================================================
-   CAROUSEL CONTAINER
+   CAROUSEL CONTAINER - CONTAINER FOR THE CAROUSEL
 ===================================================== */
 
 .partners-carousel-container {
@@ -1891,7 +1894,7 @@ footer {
 }
 
 /* =====================================================
-   CAROUSEL TRACK (MOVIMIENTO POR JS)
+   CAROUSEL TRACK (MOVIMEMENT BY JS)
 ===================================================== */
 
 .partners-carousel {
