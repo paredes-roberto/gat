@@ -1,14 +1,5 @@
 /* Import Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Gothic+A1&family=Stardos+Stencil:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Gothic+A1&family=Stardos+Stencil:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Gothic+A1&family=Saira:ital,wght@0,100..900;1,100..900&family=Stardos+Stencil:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
-
 /* Reset & base */
 * {
   margin: 0;
@@ -18,7 +9,6 @@
 
 body {
   font-family: 'Urbanist', sans-serif;
-  /*font-family: 'Urbanist', sans-serif;*/
   line-height: 1.6;
   color: #222;
   background: #f9f9f9;
@@ -62,7 +52,6 @@ nav a,
   border: none;
   cursor: pointer;
   font-family: 'Urbanist', sans-serif;
-  /*font-family: 'Urbanist', sans-serif;*/
 }
 
 nav a:hover,
@@ -161,7 +150,7 @@ nav a:hover,
 }
 
 /* ===== HERO PRINCIPAL ===== */
-/* Contenedor principal del hero que ocupa toda la pantalla */
+/* MAIN CONTAINER OF THE HERO THAT OCCUPIES THE WHOLE SCREEN */
 .hero {
     position: relative;
     min-height: 100vh;
@@ -169,7 +158,7 @@ nav a:hover,
     overflow: hidden;
 }
 
-/* Contenedor de imágenes de fondo con posición fija */
+/* BACKGROUND IMAGES CONTAINER WITH FIXED POSITION */
 .hero-bg {
     position: fixed;
     top: 0;
@@ -179,7 +168,7 @@ nav a:hover,
     z-index: 1;
 }
 
-/* Cada slide de fondo individual */
+/* INDIVIDUAL BACKGROUND SLIDE */
 .bg-slide {
     position: absolute;
     top: 0;
@@ -196,21 +185,21 @@ nav a:hover,
     will-change: opacity, transform;
 }
 
-/* Slide activo visible */
+/* ACTIVE SLIDE VISIBLE */
 .bg-slide.active {
     opacity: 1;
     transform: scale(1);
     z-index: 2;
 }
 
-/* Slide siguiente en cola */
+/* NEXT SLIDE IN QUEUE */
 .bg-slide.next {
     opacity: 0;
     z-index: 1;
 }
 
 /* ===== CONTENIDO DEL HERO ===== */
-/* Contenedor principal del contenido superpuesto */
+/* MAIN CONTAINER OF THE HERO CONTENT OVERLAPPED */
 .hero-content {
     position: relative;
     z-index: 3;
@@ -223,7 +212,7 @@ nav a:hover,
     margin: 0 auto;
 }
 
-/* Contenedor de texto del hero */
+/* TEXT CONTAINER OF THE HERO */
 .text-content {
     position: relative;
     max-width: 700px;
@@ -231,7 +220,7 @@ nav a:hover,
     opacity: 1;
 }
 
-/* Título principal del hero */
+/* MAIN TITLE OF THE HERO */
 .slide-title {
     font-family: 'Urbanist', sans-serif;
     font-size: 3.0rem;
@@ -244,7 +233,7 @@ nav a:hover,
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
 }
 
-/* Estados de animación del título */
+/* ANIMATION STATES OF THE TITLE */
 .slide-title.hide {
     opacity: 0;
     transform: translateY(20px);
@@ -255,7 +244,7 @@ nav a:hover,
     transform: translateY(0);
 }
 
-/* Descripción del hero */
+/* DESCRIPTION OF THE HERO */
 .slide-description {
     font-size: 1.3rem;
     line-height: 1.7;
@@ -267,7 +256,7 @@ nav a:hover,
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Estados de animación de la descripción */
+/* ANIMATION STATES OF THE DESCRIPTION */
 .slide-description.hide {
     opacity: 0;
     transform: translateY(20px);
@@ -278,8 +267,8 @@ nav a:hover,
     transform: translateY(0);
 }
 
-/* ===== CONTROLES DE NAVEGACIÓN DEL HERO ===== */
-/* Panel de controles en la parte inferior */
+/* ===== HERO NAVIGATION CONTROLS ===== */
+/* CONTROLS CONTAINER IN THE BOTTOM */
 .hero-controls {
     position: absolute;
     bottom: 3rem;
@@ -290,13 +279,13 @@ nav a:hover,
     align-items: center;
 }
 
-/* Contenedor de indicadores circulares */
+/* CIRCULAR INDICATORS CONTAINER */
 .indicators {
     display: flex;
     gap: 1rem;
 }
 
-/* Indicador individual de slide */
+/* INDIVIDUAL SLIDE INDICATOR */
 .indicator {
     width: 10px;
     height: 10px;
@@ -306,28 +295,28 @@ nav a:hover,
     transition: all 0.3s ease;
 }
 
-/* Indicador activo */
+/* ACTIVE INDICATOR */
 .indicator.active {
     background-color: #ffffff;
     transform: scale(1.3);
 }
 
-/* Efecto hover en indicadores */
+/* HOVER EFFECT ON INDICATORS */
 .indicator:hover {
     background-color: rgba(255, 255, 255, 0.7);
 }
 
-/* Contador de slides */
+/* SLIDE COUNTER */
 .slide-counter {
     color: rgba(255, 255, 255, 0.85);
     font-size: 1rem;
     font-weight: 500;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Urbanist', sans-serif;
     margin-left: 0.5rem;
 }
 
 /* ===== INDICADOR DE SCROLL ===== */
-/* Flecha animada para indicar scroll */
+/* ANIMATED SCROLL ARROW */
 .scroll-down {
     position: absolute;
     bottom: 1.5rem;
@@ -340,7 +329,7 @@ nav a:hover,
     transition: opacity 0.5s ease;
 }
 
-/* Animación de rebote para la flecha */
+/* BOUNCE ANIMATION FOR THE ARROW */
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {
         transform: translateX(-50%) translateY(0);
@@ -353,7 +342,7 @@ nav a:hover,
     }
 }
 
-/* ===== RESPONSIVE HERO - Manteniendo tamaño de fuente constante ===== */
+/* ===== RESPONSIVE HERO - MAINTAINING CONSTANT FONT SIZE ===== */
 @media (max-width: 968px) {
   .text-content {
     margin-left: 5%;
@@ -380,7 +369,7 @@ nav a:hover,
     padding: 1.5rem;
   }
   
-  /* Mantener tamaño de fuente constante - NO cambiar aquí */
+  /* MAINTAIN CONSTANT FONT SIZE - DO NOT CHANGE HERE */
   .slide-title {
     font-size: 3.0rem !important; /* Mismo tamaño que desktop */
   }
@@ -405,7 +394,7 @@ nav a:hover,
     padding: 1rem;
   }
   
-  /* Mantener tamaño de fuente constante - NO cambiar aquí */
+  /* MAINTAIN CONSTANT FONT SIZE - DO NOT CHANGE HERE */
   .slide-title {
     font-size: 3.0rem !important; /* Mismo tamaño que desktop */
   }
@@ -414,39 +403,10 @@ nav a:hover,
     font-size: 1.3rem !important; /* Mismo tamaño que desktop */
   }
 }
-
-/* Hero */
-/* Comentado el 20251205 2331
-.hero {
-  position: relative;
-  z-index: 2;
-  height: 70vh;
-  background: url("../img/hero.jpg") center/cover fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: rgb(232, 242, 249);
-  padding: 0 1rem;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0px 0px 10px green;
-  border-bottom: 6px solid #002b5b; /* línea azul de separación */
-/*}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: linear-gradient(
-    hsla(265, 92%, 62%, 0.253),
-    hsla(174 100 15% / 0.6)
-  );
-  z-index: -1;
-}
-*/
-/* Proyectos */
-/* Overlay de proyectos */
+/*==============================================*/
+/* PROJECTS */
+/*==============================================*/
+/* PROJECT OVERLAY */
 .project-overlay {
   position: absolute;
   bottom: 0;
@@ -490,10 +450,10 @@ nav a:hover,
   object-fit: cover;
 }
 
-/* RESPONSIVE - Proyectos */
+/* RESPONSIVE - PROJECTS */
 @media (max-width: 992px) {
   .project-overlay {
-    transform: translateY(0); /* Siempre visible en tablet */
+    transform: translateY(0); /* ALWAYS VISIBLE IN TABLET */
     font-size: 0.9rem;
   }
 
@@ -508,7 +468,7 @@ nav a:hover,
 
 @media (max-width: 600px) {
   .carousel.full-frame {
-    height: 50vh; /* menos alto en móviles */
+    height: 50vh; /* LESS HEIGHT IN MOBILE */
   }
 
   .project-overlay {
@@ -527,7 +487,9 @@ nav a:hover,
   }
 }
 
-/* About / Quiénes Somos */
+/*==============================================*/
+/* ABOUT / WHO WE ARE */
+/*==============================================*/
 .about {
   padding: 4rem 2rem;
   background: #fff;
@@ -570,7 +532,7 @@ nav a:hover,
   box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
 
-/* Services (Bento style with background images) */
+/* SERVICES (BENTO STYLE WITH BACKGROUND IMAGES) */
 #servicios {
   padding: 4rem 2rem;
   background: #f0f6fa;
@@ -635,11 +597,6 @@ nav a:hover,
 .service-box.gobierno { background-image: url("img/services3.jpg"); }
 .service-box.municipal { background-image: url("img/services4.JPG"); }
 
-/*.service-box.residencial { background-image: url("https://picsum.photos/id/1018/600/400"); }
-.service-box.industrial { background-image: url("https://picsum.photos/id/1043/600/400"); }
-.service-box.gobierno { background-image: url("https://picsum.photos/id/1031/600/400"); }
-.service-box.municipal { background-image: url("https://picsum.photos/id/1060/600/400"); }
-*/
 /* Carousel / Proyectos */
 .carousel-section {
   padding: 4rem 0;
@@ -679,10 +636,9 @@ nav a:hover,
   object-fit: cover;
 }
 
-/* Contact + Footer same as before */
-
-
-/* Contact section */
+/*==============================================*/
+/* CONTACT SECTION */
+/*==============================================*/
 /* Contacto con mapa de fondo */
 .contacto-section {
   position: relative;
@@ -698,7 +654,6 @@ nav a:hover,
   height: 100%;
   z-index: 1;
 }
-
 
 .contact-form-container {
   position: relative;
@@ -769,17 +724,6 @@ nav a:hover,
   text-align: center;
 }
 
-/*.form-message.success {
-  background: rgba(76, 175, 80, 0.2);
-  color: #4caf50;
-  border: 1px solid rgba(76, 175, 80, 0.5);
-}
-
-.form-message.error {
-  background: rgba(244, 67, 54, 0.2);
-  color: #f44336;
-  border: 1px solid rgba(244, 67, 54, 0.5);
-}*/
 .form-message.success {
   background: rgba(1, 60, 25, 0.4);
   color: #04d85d; /* Even darker green */
@@ -962,12 +906,10 @@ footer {
   color: #ccc;
 }
 
-
-/**********************/
-/*****         *******/
-/*****         *******/
-/* Mision y Vision */
-/* Secciones individuales */
+/*==============================================*/
+/* MISSION AND VISION */
+/*==============================================*/
+/* INDIVIDUAL SECTIONS */
 .info-section {
   min-height: 100vh;
   padding: 6rem 2rem;
@@ -1108,7 +1050,7 @@ footer {
   color: white;
 }
 
-/* Texto de contenido - JUSTIFICADO */
+/* CONTENT TEXT - JUSTIFIED */
 .content-text {
   font-size: 1.2rem;
   line-height: 1.8;
@@ -1126,7 +1068,7 @@ footer {
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* Grid de pilares - diseño elegante sin botones */
+/* PILLARS GRID - ELEGANT DESIGN WITHOUT BUTTONS */
 .pillars-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1144,7 +1086,7 @@ footer {
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Círculo de fondo para pilares */
+/* BACKGROUND CIRCLE FOR PILLARS */
 .pillar-bg {
   position: absolute;
   top: 50%;
@@ -1162,7 +1104,7 @@ footer {
   transform: translate(-50%, -50%) scale(1);
 }
 
-/* Iconos para pilares */
+/* ICONS FOR PILLARS */
 .pillar-icon {
   width: 80px;
   height: 80px;
@@ -1206,7 +1148,7 @@ footer {
   color: white;
 }
 
-/* Animaciones escalonadas para pilares */
+/* STEPPED ANIMATIONS FOR PILLARS */
 .section-content.reveal .pillar-item:nth-child(1) {
   transition-delay: 0.2s;
   transform: translateY(0);
@@ -1225,15 +1167,15 @@ footer {
   opacity: 1;
 }
 
-/* Destacado sin recuadro - con subrayado elegante */
+/* HIGHLIGHTED TEXT - WITHOUT BOX - WITH ELEGANT UNDERLINE */
 .highlight-text {
   font-size: 1.2rem;
   line-height: 1.8;
   margin: 3rem 0;
   position: relative;
   padding: 1.5rem 0;
-  text-align: justify; /* JUSTIFICADO */
-  text-justify: inter-word; /* Mejor justificación */
+  text-align: justify; /* JUSTIFIED */
+  text-justify: inter-word; /* BETTER JUSTIFICATION */
 }
 
 .highlight-text::before {
@@ -1258,8 +1200,8 @@ footer {
   background: linear-gradient(to right, transparent, #012247, transparent);
 }
 
-/* Enlace NovaHomes elegante */
-/* Contenedor centrado */
+/* NOVAHOMES ELEGANT LINK */
+/* CENTERED CONTAINER */
 .nova-link-container {
   display: flex;
   justify-content: center;
@@ -1268,10 +1210,10 @@ footer {
   padding: 20px 0;
 }
 
-/* Botón con imagen */
+/* IMAGE BUTTON */
 .img-button {
   display: inline-block;
-  width: 260px;              /* tamaño base en escritorio */
+  width: 260px;              
   max-width: 100%;
   border-radius: 16px;
   overflow: hidden;
@@ -1289,7 +1231,7 @@ footer {
   pointer-events: none;
 }
 
-/* Hover/Focus solo en dispositivos con mouse */
+/* Hover/Focus ONLY ON DEVICES WITH MOUSE */
 @media (hover: hover) {
   .img-button:hover,
   .img-button:focus {
@@ -1298,28 +1240,19 @@ footer {
   }
 }
 
-/* Accesible para teclado */
+/* ACCESSIBLE FOR KEYBOARD */
 .img-button:focus {
   outline: 3px solid rgba(212, 175, 55, 0.5);
   outline-offset: 6px;
 }
 
-/* Responsive para móviles */
+/* RESPONSIVE FOR MOBILE */
 @media (max-width: 480px) {
   .img-button {
     width: 180px;
   }
 }
- 
-  
-/*.nova-link-container {
-  text-align: center;
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(0, 170, 255, 0.2);
-}*/
-
-/* Indicador de scroll */
+ /* SCROLL INDICATOR */
 .scroll-indicator {
   position: absolute;
   bottom: 2rem;
@@ -1466,13 +1399,12 @@ footer {
     font-size: 1.3rem;
   }
 }
+/*==============================================*/
+/* STRATEGIC PILLARS - GAT */
+/*==============================================*/
+/* STYLES FOR STRATEGIC PILLARS - GAT */
 
-/**********************/
-/*****         *******/
-/*****         *******/
-/* Estilos para Pilares Estratégicos - GAT */
-
-/* Sección 1: Desarrollo Inmobiliario - Background azul */
+/* SECTION 1: REAL ESTATE DEVELOPMENT - BLUE BACKGROUND */
 .section-1 {
   position: relative;
   min-height: 100vh;
@@ -1481,7 +1413,7 @@ footer {
   overflow: hidden;
 }
 
-/* Sección 2: Infraestructura Civil - Background #EFEFEF */
+/* SECTION 2: CIVIL INFRASTRUCTURE - #EFEFEF BACKGROUND */
 .section-2 {
   position: relative;
   min-height: 100vh;
@@ -1490,7 +1422,7 @@ footer {
   overflow: hidden;
 }
 
-/* Sección 3: Consultoría - Background azul */
+/* SECTION 3: CONSULTING - BLUE BACKGROUND */
 .section-3 {
   position: relative;
   min-height: 100vh;
@@ -1502,7 +1434,7 @@ footer {
 .section-title {
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 2rem; /* Aumentado para mejor espaciado */
+  margin-bottom: 2rem; /* INCREASED FOR BETTER SPACING */
   opacity: 0;
   transform: translateY(50px);
   transition: all 1s ease;
@@ -1523,13 +1455,13 @@ footer {
   text-align: center;
   font-size: 1.1rem;
   max-width: 800px;
-  margin: 0 auto 5rem; /* Aumentado para más separación antes del carrusel */
+  margin: 0 auto 5rem; /* INCREASED FOR MORE SPACING BEFORE THE CAROUSEL */
   line-height: 1.8;
   opacity: 0;
   transform: translateY(30px);
   transition: all 1s ease 0.3s;
   text-align: justify;
-  padding: 0 1rem; /* Padding lateral para mejor lectura */
+  padding: 0 1rem; /* SIDE PADDING FOR BETTER READING */
 }
 
 .section-1 .section-subtitle,
@@ -1547,7 +1479,7 @@ footer {
   transform: translateY(0);
 }
 
-/* Contenedor de tarjetas */
+/* CARDS CONTAINER */
 .cards-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -1563,7 +1495,7 @@ footer {
   transform: translateY(0);
 }
 
-/* Estilo base para tarjetas */
+/* BASE STYLE FOR CARDS */
 .card {
   position: absolute;
   width: 100%;
@@ -1582,7 +1514,7 @@ footer {
   pointer-events: auto;
 }
 
-/* Imágenes */
+/* IMAGES */
 .card-image {
   grid-area: image;
   position: relative;
@@ -1609,10 +1541,10 @@ footer {
   transform: scale(1.05);
 }
 
-/* Texto de las tarjetas */
+  /* TEXT OF THE CARDS */
 .card-text {
   grid-area: text;
-  padding: 1.5rem; /* Reducido para acercar el contenido */
+  padding: 1.5rem; /* REDUCED TO APPROACH THE CONTENT */
   background: rgba(1, 34, 71, 0.05);
   border-radius: 16px;
 }
@@ -1628,7 +1560,7 @@ footer {
 
 .card-text h3 {
   font-size: 1.8rem;
-  margin-bottom: 1.2rem; /* Reducido para acercar al párrafo */
+  margin-bottom: 1.2rem; /* REDUCED TO APPROACH THE PARAGRAPH */
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.6s ease 0.3s;
@@ -1651,13 +1583,13 @@ footer {
 
 .card-text p {
   font-size: 1.1rem;
-  line-height: 1.7; /* Reducido para mejor densidad */
-  min-height: 120px; /* Reducido para más compacto */
+  line-height: 1.7; /* REDUCED FOR BETTER DENSITY */
+  min-height: 120px; /* REDUCED FOR MORE COMPACT */
   text-align: justify;
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.6s ease 0.5s;
-  margin-bottom: 1.2rem; /* Reducido para acercar a la lista */
+  margin-bottom: 1.2rem; /* REDUCED TO APPROACH THE LIST */
 }
 
 .section-1 .card-text p,
@@ -1674,10 +1606,10 @@ footer {
   transform: translateY(0);
 }
 
-/* Lista de características - Más compacta */
+/* FEATURES LIST - MORE COMPACT */
 .features-list {
   list-style: none;
-  margin-top: 0.5rem; /* Reducido para acercar al párrafo */
+  margin-top: 0.5rem; /* REDUCED TO APPROACH THE PARAGRAPH */
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.6s ease 0.7s;
@@ -1689,18 +1621,18 @@ footer {
 }
 
 .features-list li {
-  margin-bottom: 0.6rem; /* Reducido para más densidad */
-  padding-left: 1.2rem; /* Reducido */
+  margin-bottom: 0.6rem; /* REDUCED FOR MORE DENSITY */
+  padding-left: 1.2rem; /* REDUCED */
   position: relative;
-  line-height: 1.5; /* Reducido */
-  font-size: 1rem; /* Tamaño consistente */
+  line-height: 1.5; /* REDUCED */
+  font-size: 1rem; /* CONSISTENT SIZE */
 }
 
 .features-list li:before {
   content: "•";
   position: absolute;
   left: 0;
-  font-size: 1.2rem; /* Reducido */
+  font-size: 1.2rem; /* REDUCED */
   top: -0.1rem; /* Ajuste fino */
 }
 
@@ -1713,10 +1645,10 @@ footer {
   color: #002b5b;
 }
 
-/* Indicadores */
+/* INDICATORS */
 .card-indicators {
   position: absolute;
-  bottom: -50px; /* Subido un poco */
+  bottom: -50px; /* SLIGHTLY UP */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -1762,8 +1694,8 @@ footer {
       "text"
       "image";
     gap: 2rem;
-    position: relative;          /* Evita superposiciones en mobile */
-    opacity: 1;                  /* Mantiene visibilidad */
+    position: relative;          /* AVOID OVERLAPS IN MOBILE */
+    opacity: 1;                  /* MAINTAIN VISIBILITY */
     pointer-events: auto;
   }
 
@@ -1775,17 +1707,17 @@ footer {
     padding: 1rem;
   }
 
-  /* Ajustes de contenedor para altura automática en mobile/tablet */
+  /* CONTAINER ADJUSTMENTS FOR AUTOMATIC HEIGHT IN MOBILE/TABLET */
   .cards-container {
     min-height: auto;
   }
 
-  /* Solo mostrar la card activa para evitar stacking */
+  /* ONLY SHOW THE ACTIVE CARD TO AVOID STACKING */
   .card:not(.active) {
     display: none;
   }
 
-  /* Indicadores dentro del flujo para permitir scroll natural */
+  /* INDICATORS WITHIN THE FLOW TO ALLOW NATURAL SCROLL */
   .card-indicators {
     position: static;
     transform: none;
@@ -1829,7 +1761,7 @@ footer {
     padding: 4rem 1rem;
   }
 
-  /* Garantizar scroll sin cortes en mobile */
+  /* ENSURE SCROLL WITHOUT CUTS IN MOBILE */
   .cards-container {
     min-height: auto;
   }
@@ -1884,7 +1816,6 @@ footer {
   }
 }
 
-/*PARTNERS*/
 /* =====================================================
    PARTNERS SECTION
 ===================================================== */
