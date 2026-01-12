@@ -1,6 +1,6 @@
 /**
  * Contact Form Handler
- * Handles form submission, validation, and CAPTCHA verification
+ * Handles form submission and validation for Formspree
  * Includes field-by-field validation in both languages
  */
 
@@ -18,7 +18,6 @@
       sending: 'Enviando...',
       success: '¡Gracias! Tu mensaje ha sido enviado exitosamente.',
       error: 'Lo sentimos, hubo un error al enviar tu mensaje. Por favor intenta de nuevo más tarde.',
-      captchaError: 'Por favor completa el CAPTCHA.',
       validation: {
         nombreRequired: 'Por favor ingresa tu nombre.',
         nombreTooShort: 'El nombre debe tener al menos 2 caracteres.',
@@ -32,7 +31,6 @@
       sending: 'Sending...',
       success: 'Thank you! Your message has been sent successfully.',
       error: 'Sorry, there was an error sending your message. Please try again later.',
-      captchaError: 'Please complete the CAPTCHA.',
       validation: {
         nombreRequired: 'Please enter your name.',
         nombreTooShort: 'Name must be at least 2 characters.',
@@ -162,11 +160,10 @@
 
     // Handle form submission
     contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
       // Check HTML5 validation first
       if (!contactForm.checkValidity()) {
-        e.preventDefault();
-        e.stopPropagation();
-        
         // Find first invalid field and focus it
         const firstInvalid = contactForm.querySelector(':invalid');
         if (firstInvalid) {
@@ -175,8 +172,6 @@
         }
         return false;
       }
-
-      e.preventDefault();
       
       const currentLang = getCurrentLang();
       const langTexts = texts[currentLang];
@@ -186,24 +181,6 @@
       // Hide previous messages
       hideMessage();
       
-      // Get reCAPTCHA response
-      const grecaptcha = window.grecaptcha;
-      let recaptchaResponse = '';
-      
-      if (grecaptcha && typeof grecaptcha.getResponse === 'function') {
-        try {
-          recaptchaResponse = grecaptcha.getResponse();
-          if (!recaptchaResponse) {
-            showMessage(langTexts.captchaError, false);
-            return;
-          }
-        } catch (error) {
-          console.error('reCAPTCHA error:', error);
-          showMessage(langTexts.error, false);
-          return;
-        }
-      }
-      
       // Disable submit button
       submitButton.disabled = true;
       submitButton.textContent = langTexts.sending;
@@ -211,54 +188,38 @@
       // Get form data
       const formData = new FormData(contactForm);
       
-      // Add reCAPTCHA response if available
-      if (recaptchaResponse) {
-        formData.append('g-recaptcha-response', recaptchaResponse);
-      }
-      
-      // Send form data
-      fetch('contact.php', {
+      // Send form data to Formspree
+      fetch(contactForm.action, {
         method: 'POST',
-        body: formData
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
       })
       .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then(data => {
-        // Show message
-        const messageText = data.success ? langTexts.success : langTexts.error;
-        showMessage(messageText, data.success);
-        
-        if (data.success) {
-          // Reset form on success
+        if (response.ok) {
+          showMessage(langTexts.success, true);
           contactForm.reset();
-          
-          // Reset reCAPTCHA
-          if (grecaptcha && typeof grecaptcha.reset === 'function') {
-            try {
-              grecaptcha.reset();
-            } catch (error) {
-              console.error('reCAPTCHA reset error:', error);
-            }
-          }
           
           // Hide message after 5 seconds
           setTimeout(() => {
             hideMessage();
           }, 5000);
+        } else {
+          return response.json().then(data => {
+            if (data.errors) {
+              throw new Error(data.errors.map(error => error.message).join(', '));
+            } else {
+              throw new Error('Form submission failed');
+            }
+          });
         }
-        
-        // Re-enable submit button
-        submitButton.disabled = false;
-        submitButton.textContent = originalButtonText;
       })
       .catch(error => {
         console.error('Form submission error:', error);
         showMessage(langTexts.error, false);
-        
+      })
+      .finally(() => {
         // Re-enable submit button
         submitButton.disabled = false;
         submitButton.textContent = originalButtonText;

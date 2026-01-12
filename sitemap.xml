@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ===================================================== -->
+<!-- sitemap.xml - XML Sitemap for Search Engines -->
+<!-- Optimized for SEO 2026 Best Practices -->
+<!-- ===================================================== -->
+<!-- 
+  IMPORTANT: Replace YOURDOMAIN.com with your actual domain (e.g., gatcr.com)
+  This sitemap helps search engines discover and index your pages efficiently.
+  
+  Sitemap Protocol: http://www.sitemaps.org/protocol.html
+  Last Modified: 2026-01-01 (Update this date when you modify pages)
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- ===================================================== -->
+  <!-- Homepage - Highest Priority -->
+  <!-- ===================================================== -->
+  <url>
+    <!-- Absolute URL to homepage -->
+    <loc>https://YOURDOMAIN.com/</loc>
+    <!-- Last modification date - Update when content changes -->
+    <lastmod>2026-01-01</lastmod>
+    <!-- Priority: 1.0 = highest (homepage should be highest) -->
+    <priority>1.0</priority>
+    <!-- Change frequency: How often page content changes -->
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- ===================================================== -->
+  <!-- Main Index Page (if different from root) -->
+  <!-- ===================================================== -->
+  <url>
+    <loc>https://YOURDOMAIN.com/index.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <!-- Slightly lower priority than root URL -->
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- ===================================================== -->
+  <!-- Note: 404.html is EXCLUDED from sitemap -->
+  <!-- Error pages should not be indexed for SEO -->
+  <!-- ===================================================== -->
+
+</urlset>
+
+<!-- ===================================================== -->
+<!-- Sitemap Best Practices Followed: -->
+<!-- 1. Uses absolute URLs (required by protocol) -->
+<!-- 2. Excludes error pages (404.html) -->
+<!-- 3. Follows sitemap protocol standards -->
+<!-- 4. Includes lastmod, priority, and changefreq -->
+<!-- 5. Uses proper XML structure and namespaces -->
+<!-- ===================================================== -->
+<!-- 
+  To submit this sitemap to search engines:
+  1. Google Search Console: https://search.google.com/search-console
+  2. Bing Webmaster Tools: https://www.bing.com/webmasters
+  3. robots.txt already references this sitemap
+  
+  Update Instructions:
+  - Replace YOURDOMAIN.com with your actual domain
+  - Update <lastmod> dates when you modify pages
+  - Add new pages as you create them
+  - Keep file under 50MB and 50,000 URLs (we're well under)
+-->

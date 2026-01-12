@@ -1,3 +1,247 @@
-# Custom 404 Error Page for Apache
-# This handles broken internal links, invalid URLs, deleted/renamed pages
+# =====================================================
+# Apache Configuration for Bluehost
+# Comprehensive Security, Performance & SEO Optimization
+# =====================================================
+
+# =====================================================
+# Enable Rewrite Engine (Required for redirects)
+# =====================================================
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+# =====================================================
+# Force HTTPS (Security & SEO - Prevents Mixed Content)
+# =====================================================
+# Redirects all HTTP traffic to HTTPS
+# Required for secure connections and better SEO rankings
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# =====================================================
+# Block Access to Sensitive Files (Security)
+# =====================================================
+# Prevents access to configuration files, logs, and sensitive data
+<FilesMatch "(^\.htaccess|\.htpasswd|\.env|\.ini|\.log|\.sh|\.sql|\.bak|\.backup|\.old|\.tmp)$">
+    Require all denied
+</FilesMatch>
+
+# =====================================================
+# Disable Directory Listing (Security)
+# =====================================================
+# Prevents directory browsing to protect file structure
+Options -Indexes
+
+# =====================================================
+# Custom 404 Error Page
+# =====================================================
+# Returns proper 404 status code for missing pages
+# Important for SEO - prevents soft 404s
 ErrorDocument 404 /404.html
+
+# =====================================================
+# Enable Compression (Performance - Core Web Vitals)
+# =====================================================
+# Reduces file sizes by up to 90%, improving load times
+<IfModule mod_deflate.c>
+    # Compress HTML, CSS, JavaScript, Text, XML and fonts
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/atom_xml
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE image/x-icon
+    AddOutputFilterByType DEFLATE font/truetype
+    AddOutputFilterByType DEFLATE font/opentype
+    AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+    AddOutputFilterByType DEFLATE font/ttf
+    AddOutputFilterByType DEFLATE font/otf
+    AddOutputFilterByType DEFLATE font/woff
+    AddOutputFilterByType DEFLATE font/woff2
+    
+    # Remove browser bugs (only needed for really old browsers)
+    BrowserMatch ^Mozilla/4 gzip-only-text/html
+    BrowserMatch ^Mozilla/4\.0[678] no-gzip
+    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+    Header append Vary User-Agent
+</IfModule>
+
+# =====================================================
+# Browser Caching (Performance - Core Web Vitals)
+# =====================================================
+# Improves repeat visit performance and reduces server load
+<IfModule mod_expires.c>
+    ExpiresActive On
+    
+    # Images - Cache for 1 year (immutable resources)
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    
+    # Fonts - Cache for 1 year (immutable resources)
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/otf "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+    
+    # CSS and JavaScript - Cache for 1 month (may update)
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType application/x-javascript "access plus 1 month"
+    
+    # HTML - Cache for 1 hour (content may change)
+    ExpiresByType text/html "access plus 1 hour"
+    
+    # Data - Cache for 1 week
+    ExpiresByType application/json "access plus 1 week"
+    ExpiresByType application/xml "access plus 1 week"
+    ExpiresByType text/xml "access plus 1 week"
+    
+    # Default fallback
+    ExpiresDefault "access plus 1 month"
+</IfModule>
+
+# Alternative caching headers if mod_expires is not available
+<IfModule mod_headers.c>
+    # Cache images for 1 year
+    <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico)$">
+        Header set Cache-Control "max-age=31536000, immutable"
+    </FilesMatch>
+    
+    # Cache fonts for 1 year
+    <FilesMatch "\.(ttf|otf|woff|woff2|eot)$">
+        Header set Cache-Control "max-age=31536000, immutable"
+    </FilesMatch>
+    
+    # Cache CSS and JS for 1 month
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "max-age=2592000, public"
+    </FilesMatch>
+    
+    # Cache HTML for 1 hour
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "max-age=3600, public, must-revalidate"
+    </FilesMatch>
+</IfModule>
+
+# =====================================================
+# Security Headers (Anti-Hacking & Privacy)
+# =====================================================
+<IfModule mod_headers.c>
+    # =====================================================
+    # X-Content-Type-Options: Prevent MIME Sniffing
+    # =====================================================
+    # Prevents browsers from trying to guess MIME types
+    # Protects against MIME-type confusion attacks
+    Header set X-Content-Type-Options "nosniff"
+    
+    # =====================================================
+    # X-Frame-Options: Prevent Clickjacking
+    # =====================================================
+    # Prevents site from being embedded in iframes
+    # Protects against clickjacking attacks
+    Header set X-Frame-Options "SAMEORIGIN"
+    
+    # =====================================================
+    # X-XSS-Protection: Enable XSS Filtering
+    # =====================================================
+    # Enables browser's built-in XSS protection
+    # Legacy header but still useful for older browsers
+    Header set X-XSS-Protection "1; mode=block"
+    
+    # =====================================================
+    # Referrer-Policy: Control Referrer Information
+    # =====================================================
+    # Controls how much referrer information is sent
+    # Balances privacy and functionality
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # =====================================================
+    # Permissions-Policy: Restrict Browser Features
+    # =====================================================
+    # Controls which browser features can be used
+    # Reduces attack surface
+    Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+    
+    # =====================================================
+    # Content-Security-Policy: XSS Protection
+    # =====================================================
+    # Comprehensive XSS protection policy
+    # Allows inline styles/scripts (required for existing site)
+    # Allows external resources for fonts, forms, and maps
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://formspree.io https://www.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self' https://formspree.io https://api.formspree.io; frame-src 'self' https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self' https://formspree.io; upgrade-insecure-requests;"
+</IfModule>
+
+# =====================================================
+# Block Bad Bots and Scrapers (Security)
+# =====================================================
+<IfModule mod_rewrite.c>
+    RewriteCond %{HTTP_USER_AGENT} ^$ [OR]
+    RewriteCond %{HTTP_USER_AGENT} ^(-|\.|') [OR]
+    RewriteCond %{HTTP_USER_AGENT} (bot|crawl|slurp|spider|scrape|curl|wget|python|java|perl|ruby|bash|sh|cmd|powershell|nikto|nmap|sqlmap|masscan|scanner) [NC]
+    RewriteCond %{HTTP_USER_AGENT} !(googlebot|bingbot|slurp|duckduckbot|baiduspider|yandexbot|sogou|exabot|facebot|ia_archiver|mediapartners|adsbot-google) [NC]
+    RewriteRule .* - [F,L]
+</IfModule>
+
+# =====================================================
+# Prevent Access to PHP Files in Public Directory
+# =====================================================
+# If no PHP files exist, this prevents accidental execution
+# <FilesMatch "\.php$">
+#     Require all denied
+# </FilesMatch>
+
+# =====================================================
+# Enable UTF-8 Encoding
+# =====================================================
+# Ensures proper character encoding
+AddDefaultCharset UTF-8
+<IfModule mod_mime.c>
+    AddCharset UTF-8 .html .css .js .xml .json .rss .atom
+</IfModule>
+
+# =====================================================
+# Protect Against SQL Injection (Basic)
+# =====================================================
+<IfModule mod_rewrite.c>
+    RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+    RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+    RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+    RewriteRule .* - [F,L]
+</IfModule>
+
+# =====================================================
+# Prevent Hotlinking (Optional - Uncomment if needed)
+# =====================================================
+# Prevents other sites from directly linking to your images
+# <IfModule mod_rewrite.c>
+#     RewriteCond %{HTTP_REFERER} !^$
+#     RewriteCond %{HTTP_REFERER} !^https?://(www\.)?yourdomain\.com [NC]
+#     RewriteRule \.(jpg|jpeg|png|gif|webp)$ - [F,L]
+# </IfModule>
+
+# Note: ErrorDocument 404 directive above ensures 404.html returns proper 404 status
+# Apache automatically sends 404 status code when serving custom error pages
+
+# =====================================================
+# Enable Keep-Alive (Performance)
+# =====================================================
+# Reduces connection overhead for multiple requests
+<IfModule mod_headers.c>
+    Header set Connection keep-alive
+</IfModule>

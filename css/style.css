@@ -745,7 +745,7 @@ nav a:hover,
 }
 
 /* reCAPTCHA styling */
-.contact-form .g-recaptcha {
+/*.contact-form .g-recaptcha {
   margin: 1rem 0;
   display: flex;
   justify-content: center;
@@ -753,8 +753,8 @@ nav a:hover,
 
 .contact-form .g-recaptcha > div {
   margin: 0 auto;
-}
-
+} 
+*/
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
   color: rgba(0, 43, 91, 0.7);
@@ -769,7 +769,7 @@ nav a:hover,
   text-align: center;
 }
 
-.form-message.success {
+/*.form-message.success {
   background: rgba(76, 175, 80, 0.2);
   color: #4caf50;
   border: 1px solid rgba(76, 175, 80, 0.5);
@@ -779,6 +779,21 @@ nav a:hover,
   background: rgba(244, 67, 54, 0.2);
   color: #f44336;
   border: 1px solid rgba(244, 67, 54, 0.5);
+}*/
+.form-message.success {
+  background: rgba(1, 60, 25, 0.4);
+  color: #04d85d; /* Even darker green */
+  border: 2px solid #27ae60; /* Solid border */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  font-weight: 600; /* Bolder text */
+}
+
+.form-message.error {
+  background: rgba(76, 9, 1, 0.4);
+  color: #d41807; /* Even darker red */
+  border: 2px solid #c0392b; /* Solid border */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  font-weight: 600; /* Bolder text */
 }
 
 .contact-form button {
@@ -963,13 +978,13 @@ footer {
   overflow: hidden;
 }
 
-/* Alternancia de colores */
+/* Alternancia de colores - INVERTIDO */
 .info-section:nth-child(odd) {
-  background: #012247; /* Azul */
+  background: #EFEFEF; /* Gris */
 }
 
 .info-section:nth-child(even) {
-  background: #EFEFEF; /* Gris */
+  background: #012247; /* Azul */
 }
 
 /* Contenido de sección */
@@ -1010,13 +1025,13 @@ footer {
   border-radius: 3px;
 }
 
-/* Colores para fondos alternados */
+/* Colores para fondos alternados - INVERTIDO */
 .info-section:nth-child(odd) .section-title {
-  color: white;
+  color: #002045;
 }
 
 .info-section:nth-child(even) .section-title {
-  color: #002045;
+  color: white;
 }
 
 /* Contenedor dual para Misión y Visión */
@@ -1086,11 +1101,11 @@ footer {
 }
 
 .info-section:nth-child(odd) .dual-title {
-  color: white;
+  color: #002045;
 }
 
 .info-section:nth-child(even) .dual-title {
-  color: #002045;
+  color: white;
 }
 
 /* Texto de contenido - JUSTIFICADO */
@@ -1104,11 +1119,11 @@ footer {
 }
 
 .info-section:nth-child(odd) .content-text {
-  color: rgba(255, 255, 255, 0.9);
+  color: #444;
 }
 
 .info-section:nth-child(even) .content-text {
-  color: #444;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 /* Grid de pilares - diseño elegante sin botones */
@@ -1163,12 +1178,12 @@ footer {
 }
 
 .info-section:nth-child(odd) .pillar-icon svg {
-  fill: #00aaff;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  fill: #002b5b;
 }
 
 .info-section:nth-child(even) .pillar-icon svg {
-  fill: #002b5b;
+  fill: #00aaff;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
 .pillar-item:hover .pillar-icon svg {
@@ -1184,11 +1199,11 @@ footer {
 }
 
 .info-section:nth-child(odd) .pillar-title {
-  color: white;
+  color: #002b5b;
 }
 
 .info-section:nth-child(even) .pillar-title {
-  color: #002b5b;
+  color: white;
 }
 
 /* Animaciones escalonadas para pilares */
@@ -1346,11 +1361,11 @@ footer {
 }
 
 .info-section:nth-child(odd) .scroll-indicator {
-  color: white;
+  color: #002b5b;
 }
 
 .info-section:nth-child(even) .scroll-indicator {
-  color: #002b5b;
+  color: white;
 }
 
 @keyframes scrollBounce {

@@ -1,0 +1,50 @@
+# =====================================================
+# robots.txt - Search Engine Crawler Instructions
+# Optimized for SEO 2026 Best Practices
+# =====================================================
+
+# =====================================================
+# Allow All User Agents (Search Engines)
+# =====================================================
+# Allows all major search engines to crawl the site
+User-agent: *
+
+# =====================================================
+# Allow Access to All Pages
+# =====================================================
+# No restrictions - all pages are indexable
+# This helps search engines discover all content
+Allow: /
+
+# =====================================================
+# Disallow Error Pages (SEO Best Practice)
+# =====================================================
+# Prevents search engines from indexing error pages
+# Important for SEO - avoids soft 404s in search results
+Disallow: /404.html
+
+# =====================================================
+# Disallow Hidden Files and Directories (Security)
+# =====================================================
+# Prevents access to configuration and system files
+# Protects sensitive information from being crawled
+Disallow: /.htaccess
+Disallow: /.htpasswd
+Disallow: /_redirects
+Disallow: /.vscode/
+Disallow: /.git/
+
+# =====================================================
+# Sitemap Location
+# =====================================================
+# Tells search engines where to find the sitemap
+# Helps with faster indexing and better crawl efficiency
+# IMPORTANT: Replace YOURDOMAIN.com with your actual domain (e.g., gatcr.com)
+Sitemap: https://YOURDOMAIN.com/sitemap.xml
+
+# =====================================================
+# Crawl Delay (Optional)
+# =====================================================
+# Optional: Uncomment if you want to slow down aggressive crawlers
+# Most modern search engines ignore this, but some bots respect it
+# Crawl-delay: 1
