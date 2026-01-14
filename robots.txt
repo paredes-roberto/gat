@@ -40,7 +40,7 @@ Disallow: /.git/
 # Tells search engines where to find the sitemap
 # Helps with faster indexing and better crawl efficiency
 # IMPORTANT: Replace YOURDOMAIN.com with your actual domain (e.g., gatcr.com)
-Sitemap: https://YOURDOMAIN.com/sitemap.xml
+Sitemap: https://gatcr.com/sitemap.xml
 
 # =====================================================
 # Crawl Delay (Optional)

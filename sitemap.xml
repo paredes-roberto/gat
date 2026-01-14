@@ -21,22 +21,9 @@
     <!-- Absolute URL to homepage -->
     <loc>https://gatcr.com/</loc>
     <!-- Last modification date - Update when content changes -->
-    <lastmod>2026-01-12</lastmod>
-    <!-- Priority: 1.0 = highest (homepage should be highest) -->
-    <priority>1.0</priority>
+    <lastmod>2026-01-15</lastmod>
     <!-- Change frequency: How often page content changes -->
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <!-- ===================================================== -->
-  <!-- Main Index Page (if different from root) -->
-  <!-- ===================================================== -->
-  <url>
-    <loc>https://gatcr.com/index.html</loc>
-    <lastmod>2026-01-12</lastmod>
-    <!-- Slightly lower priority than root URL -->
-    <priority>0.9</priority>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
   </url>
 
   <!-- ===================================================== -->
